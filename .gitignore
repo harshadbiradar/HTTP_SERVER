@@ -1,0 +1,29 @@
+/*
+
+!.gitignore
+!*.cpp
+!*.h
+!CMakeLists.txt
+!README.md
+!LICENSE
+!phs2/
+!Thread_pool/
+!http_server/
+!*.txt
+
+# Ignore executables and binaries (everywhere)
+!*/
+*/
+!*.*
+*.o
+*.a
+*.so
+*.exe
+
+# Ignore editor and temp files
+**/.vscode/
+*.swp
+*.swo
+*~
+
+
