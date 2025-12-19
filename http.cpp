@@ -16,8 +16,14 @@ int main(){
     connect(clientsocket,(struct sockaddr*)&clientAddress,sizeof(clientAddress));
 
     const char* msg="Hello\0";
-
+    // while(true){
+    //     sleep(2);
+    //     // send(clientsocket,msg,strlen(msg),0);
+    //     sleep(10);
+    // }
     send(clientsocket,msg,strlen(msg),0);
+    sleep(50);
+
     close(clientsocket);
     return 0;
 }
