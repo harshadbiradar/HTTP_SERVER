@@ -61,6 +61,7 @@ public:
     template <typename K>
     void push(K &&data);
     T pop();
+    T try_pop();
     int safe_size();
     void shutdown();
     // bool is_empty();
@@ -117,6 +118,22 @@ T Blocking_Queue<T>::pop()
     std::cout << " [INFO]:: Data poped: " << std::endl;
     queue.pop();
     cv.notify_one();
+    return data;
+}
+
+
+template <typename T>
+T Blocking_Queue<T>::try_pop()
+{
+    //this is a wait free pop,
+    std::unique_lock<std::mutex> lock(m);
+    if ( queue.empty()){
+        // std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
+        return T{};
+    }
+    T data = queue.front();
+    std::cout << " [INFO]:: Data poped: " << std::endl;
+    queue.pop();
     return data;
 }
 
