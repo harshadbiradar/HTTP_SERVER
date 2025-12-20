@@ -10,6 +10,7 @@
 #include <fcntl.h>
 #include <utility>
 #include<sys/eventfd.h>
+#include<memory>
 
 #define PORT 8080
 #define N_CLIENTS 1
@@ -101,55 +102,56 @@ void terminate()
     std::terminate();
 }
 
-void http_request_parser(struct Connection &my_conn)
+void http_request_parser(struct std::shared_ptr<Connection>my_conn)
 {
-    std::cout << my_conn.read_buffer << std::endl;
+    std::cout << my_conn->read_buffer << std::endl;
 }
 void http_response_parser()
 {
 }
 
-void read_func(struct Connection &my_conn)
+void read_func(struct std::shared_ptr<Connection>&my_conn)
 {
     std::cout << "In read_func" << std::endl;
-    auto lam = [&my_conn]()
+    auto lam = [my_conn]()
     {
-        std::unique_lock<std::mutex> lock(my_conn.m);
+        std::unique_lock<std::mutex> lock(my_conn->m);
         // need to handle closing state
-        while (my_conn.state != Connection::STATE::READING)
+        while (my_conn->state != Connection::STATE::READING)
         {
-            my_conn.cv.wait(lock);
+            my_conn->cv.wait(lock);
             // here need to add Conditional_variable to handle it properly.
         }
-        my_conn.state = Connection::STATE::PROCESSING;
+        my_conn->state = Connection::STATE::PROCESSING;
         std::cout << "In read_lambda" << std::endl;
         http_request_parser(my_conn);
-        my_conn.state = Connection::STATE::WRITING;
-        // my_conn.event.events = EPOLLOUT;//this is wrong, should be handled in epoll thread using eventfd.
+        my_conn->state = Connection::STATE::WRITING;
+        // my_conn->event.events = EPOLLOUT;//this is wrong, should be handled in epoll thread using eventfd.
         // post Business logic.
-        my_conn.state = Connection::STATE::WRITING;
-        Writable_queue.push(my_conn.fd);
+        my_conn->state = Connection::STATE::WRITING;
+        Writable_queue.push(my_conn->fd);
         uint64_t value=1;
         if(write(notify_fd,&value,sizeof(value))==-1){
             std::cerr << "[ERROR]: Error writing in eventfd: "<<strerror(errno)<< std::endl;
             terminate();
         }
-        my_conn.cv.notify_all();
+        my_conn->cv.notify_all();
     };
     Worker_thread.submit(lam);
 }
-void write_func(struct Connection &my_conn)
+void write_func(struct std::shared_ptr<Connection> &my_conn)
 {
     // just for now.
     std::cout << "In write_func" << std::endl;
-    my_conn.write_buffer.append(my_conn.read_buffer);
+    my_conn->write_buffer.append(my_conn->read_buffer);
 }
 
-void accept_all(struct epoll_event &event, std::unordered_map<int, Connection> &Live_connections)
+void accept_all(struct epoll_event &event, std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections)
 {
     int client_fd;
     sockaddr_in serverAddress;
     socklen_t len_sock;
+    int retcode;
     while (true)
     {
         std::cout << "In accept" << std::endl;
@@ -161,7 +163,7 @@ void accept_all(struct epoll_event &event, std::unordered_map<int, Connection> &
                 break;
             else
             {
-                std::cerr << "Error in accept." <<strerror(errno)<< std::endl;
+                std::cerr << "[ERROR]: Error in accept." <<strerror(errno)<< std::endl;
                 terminate();
                 // also handle epoll_close,server_fd close
             }
@@ -170,13 +172,18 @@ void accept_all(struct epoll_event &event, std::unordered_map<int, Connection> &
         event.data.fd = client_fd;
         int flags = fcntl(client_fd, F_GETFL, 0);
         fcntl(client_fd, F_SETFL, flags | O_NONBLOCK);
-        epoll_ctl(epoll_fd, EPOLL_CTL_ADD, client_fd, &event);
+        retcode=epoll_ctl(epoll_fd, EPOLL_CTL_ADD, client_fd, &event);
+        if (retcode == -1)
+        {
+            std::cerr << "[ERROR]: Error modifying event_fd in epoll_ctl." << std::endl;
+            terminate();
+        }
         Connection conn(client_fd, event);
         Live_connections.try_emplace(client_fd, std::forward<Connection>(conn));
     }
 }
 
-void handle_notify_fd(int notify_fd, std::unordered_map<int, Connection> &Live_connections)
+void handle_notify_fd(int notify_fd, std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections)
 {
     uint64_t val;
     int retcode;
@@ -193,11 +200,11 @@ void handle_notify_fd(int notify_fd, std::unordered_map<int, Connection> &Live_c
             // error here..
         }
         auto &my_conn = ref->second;
-        my_conn.event.events=EPOLLOUT;
-        retcode = epoll_ctl(epoll_fd, EPOLL_CTL_MOD, temp_fd,&my_conn.event);
+        my_conn->event.events=EPOLLOUT;
+        retcode = epoll_ctl(epoll_fd, EPOLL_CTL_MOD, temp_fd,&my_conn->event);
         if (retcode == -1)
         {
-            std::cerr << "Error adding socket_fd in epoll_ctl." << std::endl;
+            std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
             terminate();
         }
     }
@@ -205,7 +212,7 @@ void handle_notify_fd(int notify_fd, std::unordered_map<int, Connection> &Live_c
 }
 
 
-void handle_client_fd(int fd, std::unordered_map<int, Connection> &Live_connections){
+void handle_client_fd(int fd, std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections){
     // client event here.
     //  handle_client(events[i].data.fd,Live_connections);
     std::cout << "In post server_fd block wait" << std::endl;
@@ -215,42 +222,55 @@ void handle_client_fd(int fd, std::unordered_map<int, Connection> &Live_connecti
         // error here..
     }
     auto &my_conn = ref->second;
-    if (my_conn.event.events == EPOLLIN)
+    if (my_conn->event.events == EPOLLIN)
     {
         // read_func(my_conn);
         std::cout << "In recving block" << std::endl;
         int bytes_read;
-        size_t old_size = my_conn.read_buffer.size();
-        my_conn.read_buffer.resize(old_size + BUFFLEN);
-        while ((bytes_read = recv(my_conn.fd, &my_conn.read_buffer[old_size], BUFFLEN, 0)) > 0)
+        size_t old_size = my_conn->read_buffer.size();
+        my_conn->read_buffer.resize(old_size + BUFFLEN);
+        while ((bytes_read = recv(my_conn->fd, &my_conn->read_buffer[old_size], BUFFLEN, 0)) > 0)
         {
             std::cout << "In while recving block with : " << bytes_read << std::endl;
             old_size += bytes_read;
-            my_conn.read_buffer.resize(old_size + BUFFLEN);
+            my_conn->read_buffer.resize(old_size + BUFFLEN);
         }
         std::cout << "post while recving block with : " << bytes_read << std::endl;
-        if (bytes_read == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
+        if(bytes_read==0){
+            std::cout << "[INFO]: The Client has closed the connection, deleting this Connection." << std::endl;
+            //handle post closed connection.
+        }
+        else if (bytes_read == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
         {
             std::cout << "In read_func calling block" << std::endl;
-            my_conn.read_buffer.resize(old_size);
+            my_conn->read_buffer.resize(old_size);
             read_func(my_conn);
         }
 
         // handle this when state is processing.
     }
-    else if (my_conn.event.events == EPOLLOUT)
+    else if (my_conn->event.events == EPOLLOUT)
     {
         std::cout << "In writing block" << std::endl;
         write_func(my_conn);
-        int bytes_sent;
+        int bytes_sent=0;
+        int old_bytes=0;
+        int write_buff_len=strlen(my_conn->write_buffer.c_str());
         char buffer[BUFFLEN];
         while (true)
         {
-            strncpy(buffer, my_conn.write_buffer.c_str(), BUFFLEN - 1);
+            old_bytes+=bytes_sent;
+            write_buff_len-=bytes_sent;
+            strncpy(buffer, &my_conn->write_buffer.c_str()[old_bytes], BUFFLEN - 1);
             buffer[BUFFLEN - 1] = '\0';
-            bytes_sent = send(my_conn.fd, buffer, BUFFLEN, 0);
+            bytes_sent = send(my_conn->fd, buffer, BUFFLEN, 0);
             if (bytes_sent == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
                 break;
+            if (bytes_sent!=BUFFLEN||bytes_sent <write_buff_len )
+            {
+                std::cerr << "[ERROR]: Error sending data - Partial data is sent. Retrying...." << std::endl;
+                continue;
+            }
         }
     }
 }
@@ -259,7 +279,7 @@ int main()
 {
     // creates a Thread_pool of 5 worker threads.
     Worker_thread.create_pool();
-    std::unordered_map<int, Connection> Live_connections; // fd as key, and connection struct as value.
+    std::unordered_map<int, std::shared_ptr<Connection>> Live_connections; // fd as key, and connection struct as value.
     sockaddr_in serverAddress;
     socklen_t len_sock;
     int retcode = 0;
@@ -272,7 +292,7 @@ int main()
     server_socket = socket(AF_INET, SOCK_STREAM, 0);
     if (server_socket == -1)
     {
-        std::cerr << "Error creating server_socket.\nTerminating program" << std::endl;
+        std::cerr << "[ERROR]: Error creating server_socket.\nTerminating program" << std::endl;
         terminate();
     }
 
@@ -287,13 +307,13 @@ int main()
     int bind_val = bind(server_socket, (struct sockaddr *)&serverAddress, sizeof(serverAddress));
     if (bind_val == -1)
     {
-        std::cerr << "Error binding server_socket." << std::endl;
+        std::cerr << "[ERROR]: Error binding server_socket." << std::endl;
         terminate();
     }
     int listen_val = listen(server_socket, N_CLIENTS); // listening/holding 5 pending connections.
     if (listen_val == -1)
     {
-        std::cerr << "Error listening on server_socket." << std::endl;
+        std::cerr << "[ERROR]: Error listening on server_socket." << std::endl;
         terminate();
     }
 
@@ -308,7 +328,7 @@ int main()
     epoll_fd = epoll_create1(0);
     if (epoll_fd == -1)
     {
-        std::cerr << "Error creating epoll_fd.\nTerminating program" << std::endl;
+        std::cerr << "[ERROR]: Error creating epoll_fd.\nTerminating program" << std::endl;
         terminate();
     }
 
@@ -318,7 +338,7 @@ int main()
     retcode = epoll_ctl(epoll_fd, EPOLL_CTL_ADD, server_socket, &event);
     if (retcode == -1)
     {
-        std::cerr << "Error adding socket_fd in epoll_ctl." << std::endl;
+        std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
         terminate();
     }
 
@@ -327,7 +347,7 @@ int main()
     retcode = epoll_ctl(epoll_fd, EPOLL_CTL_ADD, notify_fd, &notify_event);
     if (retcode == -1)
     {
-        std::cerr << "Error adding event_fd in epoll_ctl." << std::endl;
+        std::cerr << "[ERROR]: Error adding event_fd in epoll_ctl." << std::endl;
         terminate();
     }
 
@@ -374,9 +394,12 @@ int main()
     -- solved it using a mutex with each particular client_fd in un_map.
 --About handling and isolating the map_oprations plus, also controlling few map_ops so to check its
     safety before performing ops.
+    **Note: here Connection_obj is a shared_ptr, and below is only valid for pointers of obj..
     --leveraged how un_maps are built.
     --each pair in un_map has {key,value},
     --now rehash only modifies the ref of this whole KV obj, the internal VALUE obj's ref remains same
         till it is alive.
     --Giving us leverage over ref for VALUE(rehash safe ref), can work independently on these refs.
+--Notifying the epoll about write_fds that are ready,without giving the control to worker threads.
+    --used eventfd along with Blocking_queue to do the work.
 */
