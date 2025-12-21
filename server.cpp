@@ -179,7 +179,7 @@ void accept_all(struct epoll_event &event, std::unordered_map<int, std::shared_p
             terminate();
         }
         Connection conn(client_fd, event);
-        Live_connections.try_emplace(client_fd, std::forward<Connection>(conn));
+        Live_connections.try_emplace(client_fd, std::make_shared<Connection>(std::forward<Connection>(conn)));
     }
 }
 
@@ -266,7 +266,7 @@ void handle_client_fd(int fd, std::unordered_map<int, std::shared_ptr<Connection
             bytes_sent = send(my_conn->fd, buffer, BUFFLEN, 0);
             if (bytes_sent == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
                 break;
-            if (bytes_sent!=BUFFLEN||bytes_sent <write_buff_len )
+            if (bytes_sent!=BUFFLEN && bytes_sent <write_buff_len )
             {
                 std::cerr << "[ERROR]: Error sending data - Partial data is sent. Retrying...." << std::endl;
                 continue;
