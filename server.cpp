@@ -125,16 +125,17 @@ void read_func(struct std::shared_ptr<Connection>&my_conn)
         my_conn->state = Connection::STATE::PROCESSING;
         std::cout << "In read_lambda" << std::endl;
         http_request_parser(my_conn);
-        my_conn->state = Connection::STATE::WRITING;
+        // my_conn->state = Connection::STATE::WRITING;
         // my_conn->event.events = EPOLLOUT;//this is wrong, should be handled in epoll thread using eventfd.
         // post Business logic.
-        my_conn->state = Connection::STATE::WRITING;
+        // my_conn->state = Connection::STATE::WRITING;
         Writable_queue.push(my_conn->fd);
         uint64_t value=1;
         if(write(notify_fd,&value,sizeof(value))==-1){
             std::cerr << "[ERROR]: Error writing in eventfd: "<<strerror(errno)<< std::endl;
             terminate();
         }
+        my_conn->state = Connection::STATE::WRITING;
         my_conn->cv.notify_all();
     };
     Worker_thread.submit(lam);
@@ -215,6 +216,7 @@ void handle_notify_fd(int notify_fd, std::unordered_map<int, std::shared_ptr<Con
 void handle_client_fd(int fd, std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections){
     // client event here.
     //  handle_client(events[i].data.fd,Live_connections);
+    int retcode;
     std::cout << "In post server_fd block wait" << std::endl;
     auto ref = Live_connections.find(fd);
     if (ref == Live_connections.end())
@@ -261,15 +263,43 @@ void handle_client_fd(int fd, std::unordered_map<int, std::shared_ptr<Connection
         {
             old_bytes+=bytes_sent;
             write_buff_len-=bytes_sent;
-            strncpy(buffer, &my_conn->write_buffer.c_str()[old_bytes], BUFFLEN - 1);
-            buffer[BUFFLEN - 1] = '\0';
-            bytes_sent = send(my_conn->fd, buffer, BUFFLEN, 0);
+            strncpy(buffer, &(my_conn->write_buffer.c_str())[old_bytes], BUFFLEN - 1);
+            // std::cout<<"The debug: buffLen: "<<strlen(buffer)<<std::endl;
+            // std::cout<<"The debug: "<<buffer<<std::endl;
+            // buffer[BUFFLEN - 1] = '\0';
+            int buff_len=strlen(buffer);
+            // std::cout<<"The debug: buffLen: "<<buff_len<<std::endl;
+            bytes_sent = send(my_conn->fd, buffer, strlen(buffer), 0);
+            // std::cout<<"The debug: bytes sent: "<<bytes_sent<<std::endl;
             if (bytes_sent == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
-                break;
-            if (bytes_sent!=BUFFLEN && bytes_sent <write_buff_len )
+               {
+                // std::unique_lock<std::mutex> lock(my_conn->m);
+                // // std::cout<<"[INFO] Write_buffer has been drained."<<std::endl;
+                // my_conn->state=Connection::STATE::READING;
+                // my_conn->cv.notify_one();
+                std::cerr << "[ERROR]: Error sending data. Kernel space might be full. Retrying...." << std::endl;
+                continue;
+               }
+            if (bytes_sent!=buff_len && bytes_sent <write_buff_len )
             {
                 std::cerr << "[ERROR]: Error sending data - Partial data is sent. Retrying...." << std::endl;
                 continue;
+            }
+            if(!bytes_sent&&!write_buff_len){
+                {
+                    std::unique_lock<std::mutex> lock(my_conn->m);
+                    std::cout<<"[INFO] Write_buffer has been drained."<<std::endl;
+                    my_conn->state=Connection::STATE::READING;
+                    my_conn->cv.notify_one();
+                    my_conn->event.events=EPOLLIN;
+                }
+                retcode = epoll_ctl(epoll_fd, EPOLL_CTL_MOD, my_conn->fd,&my_conn->event);
+                if (retcode == -1)
+                {
+                    std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
+                    terminate();
+                }
+                break;
             }
         }
     }
