@@ -104,11 +104,12 @@ void Req_handler(int fd, std::string &request)
 void write_func(struct std::shared_ptr<Connection> &my_conn)
 {
     // just for now.
-    std::cout << "In write_func" << std::endl;
-    my_conn->write_buffer.append(my_conn->read_buffer);
+    // std::cout << "In write_func" << std::endl;
+    // my_conn->write_buffer.append(my_conn->read_buffer);
 }
 
-void accept_all(struct epoll_event &event, std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections)
+void accept_all(struct epoll_event &event,
+                std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections)
 {
     int client_fd;
     sockaddr_in serverAddress;
@@ -180,85 +181,118 @@ void handle_notify_fd(int notify_fd, std::unordered_map<int, std::shared_ptr<Con
     }
 }
 
-void handle_client_fd(struct epoll_event &event, std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections)
+void handle_client_fd(struct epoll_event &event,
+                      std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections)
 {
     // client event here.
     int retcode;
-    std::cout << "In post server_fd block wait" << std::endl;
+    // std::cout << "In post server_fd block wait" << std::endl;
     auto ref = Live_connections.find(event.data.fd);
     if (ref == Live_connections.end())
     {
         // error here..
     }
     auto &my_conn = ref->second;
-    if (event.events == EPOLLIN)
+    if (event.events & EPOLLIN)
     {
         // read_func(my_conn);
-        std::cout << "In recving block" << std::endl;
+        // std::cout << "In recving block" << std::endl;
         int bytes_read;
         size_t old_size = my_conn->read_buffer.size();
-        my_conn->read_buffer.resize(old_size + BUFFLEN);
-        while ((bytes_read = recv(my_conn->fd, &my_conn->read_buffer[old_size], BUFFLEN, 0)) > 0)
+        my_conn->read_buffer.resize(old_size + BUFFLEN - 1);
+        while ((bytes_read = recv(my_conn->fd, &my_conn->read_buffer[old_size], BUFFLEN - 1, 0)) > 0)
         {
-            std::cout << "In while recving block with : " << bytes_read << std::endl;
+            // std::cout << "In while recving block with : " << bytes_read << std::endl;
             old_size += bytes_read;
-            my_conn->read_buffer.resize(old_size + BUFFLEN);
+            my_conn->read_buffer.resize(old_size + BUFFLEN - 1);
         }
-        std::cout << "post while recving block with : " << bytes_read << std::endl;
+        // std::cout << "post while recving block with : " << bytes_read << std::endl;
         if (bytes_read == 0)
         {
             std::cout << "[INFO]: The Client has closed the connection, deleting this Connection." << std::endl;
+            retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
+            if (retcode == -1)
+            {
+                std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
+                terminate();
+            }
+            close(my_conn->fd);
+            Live_connections.erase(ref);
             // handle post closed connection.
         }
         else if (bytes_read == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
         {
-            std::cout << "In read_func calling block" << std::endl;
+            // std::cout << "In read_func calling block" << std::endl;
             my_conn->read_buffer.resize(old_size);
             Req_handler(event.data.fd, my_conn->read_buffer);
             my_conn->read_buffer.clear();
         }
     }
-    else if (event.events == EPOLLOUT)
+    else if (event.events & EPOLLOUT)
     {
-        std::cout << "In writing block" << std::endl;
-        write_func(my_conn);
+        // std::cout << "In writing block" << std::endl;
+        // write_func(my_conn);
         int bytes_sent = 0;
-        int old_bytes = 0;
-        int write_buff_len = strlen(my_conn->write_buffer.c_str());
-        char buffer[BUFFLEN];
-        while (true)
+        // while (true)
         {
-            old_bytes += bytes_sent;
-            write_buff_len -= bytes_sent;
-            strncpy(buffer, &(my_conn->write_buffer.c_str())[old_bytes], BUFFLEN - 1);
-            int buff_len = strlen(buffer);
-            // std::cout<<"The debug: buffLen: "<<buff_len<<std::endl;
-            bytes_sent = send(my_conn->fd, buffer, strlen(buffer), 0);
+            bytes_sent = send(my_conn->fd, my_conn->write_buffer.c_str(),
+                              my_conn->write_buffer.length(), MSG_NOSIGNAL);
             // std::cout<<"The debug: bytes sent: "<<bytes_sent<<std::endl;
-            if (bytes_sent == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
+            if (bytes_sent == -1)
             {
-                std::cerr << "[ERROR]: Error sending data. Kernel space might be full. Retrying...." << std::endl;
-                continue;
-            }
-            if (bytes_sent != buff_len && bytes_sent < write_buff_len)
-            {
-                std::cerr << "[ERROR]: Error sending data - Partial data is sent. Retrying...." << std::endl;
-                continue;
-            }
-            if (!bytes_sent && !write_buff_len)
-            {
+                if (errno == EINTR)
                 {
-                    std::cout << "[INFO] Write_buffer has been drained." << std::endl;
-                    my_conn->event.events = EPOLLIN;
-                    my_conn->write_buffer.clear();
+                    bytes_sent = send(my_conn->fd, my_conn->write_buffer.c_str(),
+                                      my_conn->write_buffer.length(), MSG_NOSIGNAL);
+                    // continue;
                 }
+                else if (errno == EAGAIN || errno == EWOULDBLOCK)
+                {
+                }
+                else if (errno == EPIPE || errno == ECONNRESET)
+                {
+                    // connection broken.
+                    std::cerr << "[ERROR]:" << strerror(errno) << " Client connection is closed.." << std::endl;
+                    retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
+                    if (retcode == -1)
+                    {
+                        std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
+                        terminate();
+                    }
+                    close(my_conn->fd);
+                    Live_connections.erase(ref);
+                    // deleting that particular connection using refrence(iterator)
+                }
+                else
+                {
+                    std::cerr << "[ERROR]: failed with errno : " << strerror(errno) << std::endl;
+                    retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
+                    if (retcode == -1)
+                    {
+                        std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
+                        terminate();
+                    }
+                    close(my_conn->fd);
+                    Live_connections.erase(ref);
+                }
+            }
+            else if (bytes_sent > 0)
+            {
+                my_conn->write_buffer.erase(0, bytes_sent);
+            }
+
+            if (my_conn->write_buffer.empty())
+            {
+                // std::cout << "[INFO] Write_buffer has been drained." << std::endl;
+                my_conn->event.events = EPOLLIN;
+                // since here it is confirmed data is sent completely.
                 retcode = epoll_ctl(epoll_fd, EPOLL_CTL_MOD, my_conn->fd, &my_conn->event);
                 if (retcode == -1)
                 {
                     std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
                     terminate();
                 }
-                break;
+                // break;
             }
         }
     }
@@ -268,7 +302,8 @@ int main()
 {
     // creates a Thread_pool of 5 worker threads.
     Worker_thread.create_pool();
-    std::unordered_map<int, std::shared_ptr<Connection>> Live_connections; // fd as key, and connection struct as value.
+    std::unordered_map<int, std::shared_ptr<Connection>> Live_connections;
+    // fd as key, and connection struct as value.
     sockaddr_in serverAddress;
     socklen_t len_sock;
     int retcode = 0;
@@ -344,7 +379,7 @@ int main()
 
     while (true)
     {
-        std::cout << "In epoll wait" << std::endl;
+        // std::cout << "In epoll wait" << std::endl;
         int n = epoll_wait(epoll_fd, events, MAX_EVENTS, -1);
         for (int i = 0; i < n; i++)
         {
@@ -362,7 +397,7 @@ int main()
                 handle_client_fd(events[i], Live_connections);
             }
         }
-        sleep(1);
+        // sleep(1);
     }
 
     // close(server_socket);
@@ -387,7 +422,7 @@ int main()
     **Note: here Connection_obj is a shared_ptr, and below is only valid for pointers of obj..
     --leveraged how un_maps are built.
     --each pair in un_map has {key,value},
-    --now rehash only modifies the ref of this whole KV obj, the internal VALUE obj's ref remains same
+    --now rehash only modifies the ref of this whole KV obj, the internal VALUE obj's ref(address) remains same
         till it is alive.
     --Giving us leverage over ref for VALUE(rehash safe ref), can work independently on these refs.
 --Notifying the epoll about write_fds that are ready,without giving the control to worker threads.
