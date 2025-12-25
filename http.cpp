@@ -22,7 +22,8 @@ int main(){
     //     sleep(10);
     // }
     send(clientsocket,msg,strlen(msg),0);
-    sleep(50);
+    sleep(10);
+    send(clientsocket,msg,strlen(msg),0);
 
     close(clientsocket);
     return 0;

@@ -1,11 +1,11 @@
 #ifndef BLCK_QUE
 #define BLCK_QUE
 
-#include <iostream>
+#include"common_header.h"
 #include <queue>
 #include <mutex>
 #include <condition_variable>
-#include <utility>
+
 
 template <typename T>
 class Blocking_Queue
@@ -14,15 +14,16 @@ private:
     std::queue<T> queue;
     std::mutex m;
     std::condition_variable cv;
-    bool shutdown_flag = false;
-    int max_size;
+    std::atomic<bool> shutdown_flag = false;
+    std::atomic<int> max_size;
     bool is_full();
     int size();
 
 public:
-    Blocking_Queue(const int N)
-    {
-        max_size = N;
+    Blocking_Queue()
+    {   
+        //setting this as default, incase user forgot to set_size
+        max_size = 100;
     }
 
     Blocking_Queue(const Blocking_Queue &other) = delete;
@@ -64,6 +65,9 @@ public:
     T try_pop();
     int safe_size();
     void shutdown();
+    void set_size(int n){
+        max_size=n;
+    }
     // bool is_empty();
 };
 
