@@ -29,8 +29,8 @@ class Server{
             Server(Config config){
                 config.get_config(port, n_clients, max_events, n_workers, queue_size, buff_len);
                 events.reserve(max_events);
-                // Worker_thread.create_pool(n_workers);
-                // Writable_queue.set_size(queue_size);
+                Worker_thread.create_pool(n_workers);
+                Writable_queue.set_size(queue_size);
                 setup_server();
             }
             void setup_server();

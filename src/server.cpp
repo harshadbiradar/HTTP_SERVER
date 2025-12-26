@@ -19,7 +19,7 @@ void Server::terminate()
 void Server::setup_server(){
     std::cout<<"Setting server"<<std::endl;
     sockaddr_in serverAddress;
-    socklen_t len_sock;
+    // socklen_t len_sock;
     int retcode = 0;
     std::string str;
 

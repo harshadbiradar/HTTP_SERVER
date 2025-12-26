@@ -5,7 +5,7 @@ void Connection_manager::accept_all(int sock_fd,int epoll_fd,struct epoll_event 
 {
     int client_fd;
     sockaddr_in serverAddress;
-    socklen_t len_sock;
+    socklen_t len_sock=sizeof(serverAddress);
     int retcode;
     while (true)
     {
