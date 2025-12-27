@@ -83,7 +83,7 @@ void Blocking_Queue<T>::push(K &&data)
     }
     if (shutdown_flag)
     {
-        std::cout << " [WARNING]:: Push is called while SHUTDOWN is in progress, operation not allowed" << std::endl;
+        //std::cout << " [WARNING]:: Push is called while SHUTDOWN is in progress, operation not allowed" << std::endl;
         return;
     }
 
@@ -97,7 +97,7 @@ void Blocking_Queue<T>::push(K &&data)
 
     // queue is not full, so push.
     queue.emplace(std::forward<K>(data));
-    std::cout << " [INFO]:: Pushed data: "<< std::endl;
+    //std::cout << " [INFO]:: Pushed data: "<< std::endl;
     cv.notify_one();
 }
 
@@ -112,14 +112,14 @@ T Blocking_Queue<T>::pop()
         cv.wait(lock);
     }
     if (shutdown_flag && queue.empty()){
-        // std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
+        // //std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
         return T{};
     }
     /*so if shutdown is set, we break from this loop,
         giving thread chance to terminate from user side.*/
     // cv.wait(lock,[this]{return !queue.empty();});// logic explained in push, same here.
     T data = queue.front();
-    std::cout << " [INFO]:: Data poped: " << std::endl;
+    //std::cout << " [INFO]:: Data poped: " << std::endl;
     queue.pop();
     cv.notify_one();
     return data;
@@ -132,12 +132,13 @@ T Blocking_Queue<T>::try_pop()
     //this is a wait free pop,
     std::unique_lock<std::mutex> lock(m);
     if ( queue.empty()){
-        // std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
+        // //std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
         return T{};
     }
     T data = queue.front();
-    std::cout << " [INFO]:: Data poped: " << std::endl;
+    //std::cout << " [INFO]:: Data poped: " << std::endl;
     queue.pop();
+    cv.notify_one();
     return data;
 }
 
@@ -163,10 +164,10 @@ template <typename T>
 void Blocking_Queue<T>::shutdown()
 {
     std::unique_lock<std::mutex> lock(m);
-    std::cout << " [INFO]:: SHUTDOWN for Blocking_Queue is being initiallized." << std::endl;
+    //std::cout << " [INFO]:: SHUTDOWN for Blocking_Queue is being initiallized." << std::endl;
     shutdown_flag = true;
     cv.notify_all();
-    std::cout << " [INFO]:: SHUTDOWN initiated." << std::endl;
+    //std::cout << " [INFO]:: SHUTDOWN initiated." << std::endl;
 }
 
 #endif

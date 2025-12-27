@@ -15,7 +15,7 @@ private:
     Blocking_Queue<std::function<void()>> BQ;
     bool shutdown_flag = false;
     void close_pool();
-    int N;
+    int N=0;
 
 public:
     // Thread_Pool() : BQ(100)

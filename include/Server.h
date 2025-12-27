@@ -39,7 +39,7 @@ class Server{
             void terminate();
             void handle_notify_fd(int notify_fd, std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections);
             void handle_client_fd(struct epoll_event &event,std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections);
-            void Req_handler(int fd, std::string &request);
+            void Req_handler(int fd, std::string &&request);
 };
 
 #endif

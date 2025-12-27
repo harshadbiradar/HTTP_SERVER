@@ -6,14 +6,16 @@ void Server::terminate()
     // also handle epoll_close,server_fd,event_fd close
     std::cout << "Shutting down thread pool" << std::endl;
     Worker_thread.shutdown();
+    std::cout<<"Removing all active connections"<<std::endl;
+    conn_man.remove_all_connection(epoll_fd,live_connections);
     std::cout << "Closing server." << std::endl;
     close(server_socket);
     std::cout << "Closing epoll" << std::endl;
     close(epoll_fd);
     std::cout << "Closing eventfd" << std::endl;
     close(notify_fd);
-    // std::cout << "Terminating program......" << std::endl;
-    // std::terminate();
+    std::cout << "Terminating program......" << std::endl;
+    std::terminate();
 }
 
 void Server::setup_server(){
@@ -32,7 +34,7 @@ void Server::setup_server(){
     }
 
     int opt = 1;
-    if (setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+    if (setsockopt(server_socket, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt)) < 0) {
         std::cerr << "[ERROR]: Error setsockopt() \nTerminating program" << std::endl;
         terminate();
     }
@@ -92,12 +94,17 @@ void Server::setup_server(){
 
 void Server::start(){
     std::cout<<"Starting server"<<std::endl;
-    int listen_val = listen(server_socket, n_clients); // listening/holding 5 pending connections.
-    if (listen_val == -1)
-    {
-        std::cerr << "[ERROR]: Error listening on server_socket." << std::endl;
-        terminate();
-    }
+    int listen_val=-1;
+    // int listen_val = listen(server_socket, n_clients); // listening/holding 5 pending connections.
+    // if (listen_val == -1)
+    // {
+    //     std::cerr << "[ERROR]: Error listening on server_socket." << std::endl;
+    //     terminate();//to not terminate, wait for few sec..
+    // }
+    do{
+        //staying here till we get any connection, and not abruptly terminating.
+        listen_val = listen(server_socket, n_clients); // listening/holding 5 pending connections.
+    }while(listen_val==-1);
     running=true;
 
     while (running)
@@ -154,8 +161,9 @@ void Server::handle_notify_fd(int notify_fd, std::unordered_map<int, std::shared
         retcode = epoll_ctl(epoll_fd, EPOLL_CTL_MOD, temp_fd, &my_conn->event);
         if (retcode == -1)
         {
-            std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
-            terminate();
+            std::cerr << "[ERROR]: Some unexpected error, "<<strerror(errno)<<" Closing this particular connection..." << std::endl;
+            conn_man.close_connection(my_conn->fd,epoll_fd,live_connections);
+            
         }
     }
 }
@@ -188,22 +196,24 @@ void Server::handle_client_fd(struct epoll_event &event,
         // std::cout << "post while recving block with : " << bytes_read << std::endl;
         if (bytes_read == 0)
         {
-            std::cout << "[INFO]: The Client has closed the connection, deleting this Connection." << std::endl;
-            retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
-            if (retcode == -1)
-            {
-                std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
-                terminate();
-            }
-            close(my_conn->fd);
-            live_connections.erase(ref);
+            // std::cout << "[INFO]: The Client has closed the connection, deleting this Connection." << std::endl;
+            // retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
+            // if (retcode == -1)
+            // {
+            //     std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
+            //     terminate();
+            // }
+            // close(my_conn->fd);
+            // live_connections.erase(ref);
+            conn_man.close_connection(my_conn->fd,epoll_fd,live_connections);
+
             // handle post closed connection.
         }
         else if (bytes_read == -1 && (errno == EAGAIN || errno == EWOULDBLOCK))
         {
             // std::cout << "In read_func calling block" << std::endl;
             my_conn->read_buffer.resize(old_size);
-            Req_handler(event.data.fd, my_conn->read_buffer);
+            Req_handler(event.data.fd, std::move(my_conn->read_buffer));
             my_conn->read_buffer.clear();
         }
     }
@@ -232,27 +242,29 @@ void Server::handle_client_fd(struct epoll_event &event,
                 {
                     // connection broken.
                     std::cerr << "[ERROR]:" << strerror(errno) << " Client connection is closed.." << std::endl;
-                    retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
-                    if (retcode == -1)
-                    {
-                        std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
-                        terminate();
-                    }
-                    close(my_conn->fd);
-                    live_connections.erase(ref);
+                    // retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
+                    // if (retcode == -1)
+                    // {
+                    //     std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
+                    //     terminate();
+                    // }
+                    // close(my_conn->fd);
+                    // live_connections.erase(ref);
+                    conn_man.close_connection(my_conn->fd,epoll_fd,live_connections);
                     // deleting that particular connection using refrence(iterator)
                 }
                 else
                 {
                     std::cerr << "[ERROR]: failed with errno : " << strerror(errno) << std::endl;
-                    retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
-                    if (retcode == -1)
-                    {
-                        std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
-                        terminate();
-                    }
-                    close(my_conn->fd);
-                    live_connections.erase(ref);
+                    // retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, my_conn->fd, nullptr);
+                    // if (retcode == -1)
+                    // {
+                    //     std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
+                    //     terminate();
+                    // }
+                    // close(my_conn->fd);
+                    // live_connections.erase(ref);
+                    conn_man.close_connection(my_conn->fd,epoll_fd,live_connections);
                 }
             }
             else if (bytes_sent > 0)
@@ -268,8 +280,8 @@ void Server::handle_client_fd(struct epoll_event &event,
                 retcode = epoll_ctl(epoll_fd, EPOLL_CTL_MOD, my_conn->fd, &my_conn->event);
                 if (retcode == -1)
                 {
-                    std::cerr << "[ERROR]: Error adding socket_fd in epoll_ctl." << std::endl;
-                    terminate();
+                    std::cerr << "[ERROR]: Some unexpected error while modifying, "<<strerror(errno)<<" Closing this particular connection..." << std::endl;
+                    conn_man.close_connection(my_conn->fd,epoll_fd,live_connections);
                 }
                 // break;
             }
@@ -279,16 +291,20 @@ void Server::handle_client_fd(struct epoll_event &event,
 
 
 // will try to move the string resource, since it is temparory.
-void Server::Req_handler(int fd, std::string &request)
+void Server::Req_handler(int fd, std::string &&request)
 {
-    std::cout << "In Req_handler_func" << std::endl;
+    // std::cout << "In Req_handler_func" << std::endl;
     auto lam = [request, fd,this]() mutable
     {
-        std::cout << "In Req_handler_lambda" << std::endl;
+        // std::cout << "In Req_handler_lambda" << std::endl;
+        int write_val=-1;
         // Business_logic(request);
         Writable_queue.push(std::make_pair(fd, request));
         uint64_t value = 1;
-        if (write(notify_fd, &value, sizeof(value)) == -1)
+        do{
+            write_val=write(notify_fd, &value, sizeof(value));
+        }while(write_val==-1&&errno==EINTR);
+        if (write_val == -1)
         {
             std::cerr << "[ERROR]: Error writing in eventfd: " << strerror(errno) << std::endl;
             terminate();

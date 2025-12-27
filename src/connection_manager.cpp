@@ -34,6 +34,25 @@ void Connection_manager::accept_all(int sock_fd,int epoll_fd,struct epoll_event 
             // terminate();
         }
         Connection conn(client_fd, event);
-        Live_connections.try_emplace(client_fd, std::make_shared<Connection>(std::forward<Connection>(conn)));
+        Live_connections.try_emplace(client_fd, std::make_shared<Connection>(std::move(conn)));
+    }
+}
+
+
+void Connection_manager::close_connection(int fd,int epoll_fd,std::unordered_map<int,std::shared_ptr<Connection>>&live_connections){
+    int retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, fd, nullptr);
+    if (retcode == -1)
+    {
+        std::cerr << "[ERROR]: Error modifying fd in epoll_ctl." << std::endl;
+        // terminate();
+    }
+    close(fd);
+    live_connections.erase(fd);
+}
+
+void Connection_manager::remove_all_connection(int epoll_fd,std::unordered_map<int,std::shared_ptr<Connection>>&live_connection){
+    for(auto it=live_connection.begin();it!=live_connection.end();){
+        close_connection(it->second->fd,epoll_fd,live_connection);
+        ++it;
     }
 }
