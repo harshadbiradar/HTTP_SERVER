@@ -12,7 +12,8 @@ class Thread_Pool
 private:
     std::mutex m;
     std::vector<std::thread> pool;
-    Blocking_Queue<std::function<void()>> BQ;
+    std::vector<Blocking_Queue<std::function<void()>>> queue_pool;
+    // Blocking_Queue<std::function<void()>> BQ;
     bool shutdown_flag = false;
     void close_pool();
     int N=0;
@@ -28,10 +29,10 @@ public:
         shutdown();
     }
 
-    void submit(std::function<void()>);
+    void submit(int index,std::function<void()>);
     void create_pool(int N,int queue_size);
     void shutdown();
-    void thread_func();
+    void thread_func(int index);
 };
 
 // template <size_t N>

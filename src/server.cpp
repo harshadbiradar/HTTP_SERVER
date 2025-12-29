@@ -78,14 +78,14 @@ void Server::setup_server(){
     }
 
 
-    notify_fd = eventfd(0, EFD_NONBLOCK);
-    if (notify_fd == -1)
-    {
-        // std::cerr << "[ERROR]: Error creating eventfd." << std::endl;
-        LOG_ERROR("Error creating eventfd.");
-        terminate();
-    }
-    LOG_INFO("eventfd created: notify_fd=" << notify_fd);
+    // notify_fd = eventfd(0, EFD_NONBLOCK);
+    // if (notify_fd == -1)
+    // {
+    //     // std::cerr << "[ERROR]: Error creating eventfd." << std::endl;
+    //     LOG_ERROR("Error creating eventfd.");
+    //     terminate();
+    // }
+    // LOG_INFO("eventfd created: notify_fd=" << notify_fd);
 
     // creating epoll_fd that will handle all the events we get.
     epoll_fd = epoll_create1(0);
@@ -96,6 +96,29 @@ void Server::setup_server(){
         terminate();
     }
     LOG_INFO("epoll instance created: epoll_fd=" << epoll_fd);
+
+    for(int i=0;i<n_workers;++i){
+        notify_fd = eventfd(0, EFD_NONBLOCK);
+        if (notify_fd == -1)
+        {
+            // std::cerr << "[ERROR]: Error creating eventfd." << std::endl;
+            LOG_ERROR("Error creating eventfd.");
+            terminate();
+        }
+        notify_fds[i]=notify_fd;
+        
+        notify_events[i].events = EPOLLIN|EPOLLET;
+        notify_events[i].data.fd = notify_fd;
+        retcode = epoll_ctl(epoll_fd, EPOLL_CTL_ADD, notify_fd, &notify_events[i]);
+        if (retcode == -1)
+        {
+            // std::cerr << "[ERROR]: Error adding event_fd in epoll_ctl." << std::endl;
+            LOG_ERROR("Error adding event_fd in epoll_ctl.");
+            terminate();
+        }
+        LOG_INFO("eventfd created: notify_fd=" << notify_fd);
+    }
+
 
     // epoll event starts here.
     event.events = EPOLLIN|EPOLLET;
@@ -108,15 +131,15 @@ void Server::setup_server(){
         terminate();
     }
 
-    notify_event.events = EPOLLIN|EPOLLET;
-    notify_event.data.fd = notify_fd;
-    retcode = epoll_ctl(epoll_fd, EPOLL_CTL_ADD, notify_fd, &notify_event);
-    if (retcode == -1)
-    {
-        // std::cerr << "[ERROR]: Error adding event_fd in epoll_ctl." << std::endl;
-        LOG_ERROR("Error adding event_fd in epoll_ctl.");
-        terminate();
-    }
+    // notify_event.events = EPOLLIN|EPOLLET;
+    // notify_event.data.fd = notify_fd;
+    // retcode = epoll_ctl(epoll_fd, EPOLL_CTL_ADD, notify_fd, &notify_event);
+    // if (retcode == -1)
+    // {
+    //     // std::cerr << "[ERROR]: Error adding event_fd in epoll_ctl." << std::endl;
+    //     LOG_ERROR("Error adding event_fd in epoll_ctl.");
+    //     terminate();
+    // }
 
 }
 
@@ -125,8 +148,8 @@ void Server::start(){
     static auto last_stats = std::chrono::steady_clock::now();
     auto now = std::chrono::steady_clock::now();
     if (std::chrono::duration_cast<std::chrono::seconds>(now - last_stats).count() >= 10) {
-        LOG_INFO("STATS | Live connections: " << live_connections.size()
-                << " | Writable queue backlog: " << Writable_queue.safe_size());
+        // LOG_INFO("STATS | Live connections: " << live_connections.size()
+        //         << " | Writable queue backlog: " << Writable_queue.safe_size());
         last_stats = now;
     }
     std::cout<<"Starting server"<<std::endl;
@@ -154,9 +177,9 @@ void Server::start(){
                 // accept all-- server event.
                 conn_man.accept_all(server_socket,epoll_fd,events[i], live_connections);
             }
-            else if (events[i].data.fd == notify_fd)
-            {
-                handle_notify_fd(notify_fd, live_connections);
+            else if (std::find(notify_fds.begin(), notify_fds.end(), events[i].data.fd) != notify_fds.end())
+            {   
+                handle_notify_fd(events[i].data.fd, live_connections);
             }
             else
             {
@@ -172,6 +195,11 @@ void Server::handle_notify_fd(int notify_fd, std::unordered_map<int, std::shared
 {
     uint64_t val;
     int retcode;
+    int index;
+    auto it=std::find(notify_fds.begin(),notify_fds.end(),notify_fd);
+    if(it!=notify_fds.end()){
+        index = std::distance(notify_fds.begin(), it);
+    }
 
     if (read(notify_fd, &val, 8) == -1)
     {
@@ -180,7 +208,7 @@ void Server::handle_notify_fd(int notify_fd, std::unordered_map<int, std::shared
     }
     while (val--)
     {
-        auto ready_pair = Writable_queue.try_pop();
+        auto ready_pair = write_queue_pool[index].try_pop();
         int temp_fd = ready_pair.first;
         // getting write buffer from second
         std::string temp_buffer = ready_pair.second;
@@ -361,10 +389,11 @@ void Server::Req_handler(int fd, std::string &&request)
         //LOG_DEBUG("Worker thread processing request from fd=" << fd << " | size=" << request.size());
         int write_val=-1;
         // Business_logic(request);
-        Writable_queue.push(std::make_pair(fd, response));
+        // Writable_queue.push(std::make_pair(fd, response));
+        write_queue_pool[fd%n_workers].push(std::make_pair(fd, response));
         uint64_t value = 1;
         do{
-            write_val=write(notify_fd, &value, sizeof(value));
+            write_val=write(notify_fds[fd%n_workers], &value, sizeof(value));
         }while(write_val==-1&&errno==EINTR);
         if (write_val == -1)
         {
@@ -376,5 +405,5 @@ void Server::Req_handler(int fd, std::string &&request)
             //LOG_DEBUG("Successfully queued response and signaled notify_fd for fd=" << fd);
         }
     };
-    Worker_thread.submit(lam);
+    Worker_thread.submit(fd%n_workers,lam);
 }

@@ -10,8 +10,10 @@ class Server{
         int epoll_fd = -1;
         int server_socket = -1;
         int notify_fd=-1;
+        std::vector<int>notify_fds;
         struct epoll_event event, notify_event;
         std::vector<epoll_event>events;
+        std::vector<epoll_event>notify_events;
         int port;
     private:
         int max_events;
@@ -24,13 +26,22 @@ class Server{
         Thread_Pool Worker_thread;
         std::unordered_map<int ,std::shared_ptr<Connection>>live_connections;
         Connection_manager conn_man;
-        Blocking_Queue<std::pair<int, std::string>> Writable_queue;
+        std::vector<Blocking_Queue<std::pair<int, std::string>>>write_queue_pool;
+        // Blocking_Queue<std::pair<int, std::string>> Writable_queue;
         public:
             Server(Config config){
+                notify_events.reserve(n_workers);
                 config.get_config(port, n_clients, max_events, n_workers, queue_size, buff_len);
                 events.reserve(max_events);
                 Worker_thread.create_pool(n_workers,queue_size);
-                Writable_queue.set_size(queue_size);
+                // Writable_queue.set_size(queue_size);
+                for(int i=0;i<n_workers;++i){
+                    notify_fds.emplace_back(-1);
+                    notify_events.push_back(notify_event);
+                    Blocking_Queue<std::pair<int,std::string>>BQ;
+                    BQ.set_size(queue_size/n_workers);
+                    write_queue_pool.emplace_back(std::move(BQ));
+                }
                 setup_server();
             }
             void setup_server();

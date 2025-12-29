@@ -29,32 +29,69 @@ public:
     Blocking_Queue(const Blocking_Queue &other) = delete;
     Blocking_Queue &operator=(const Blocking_Queue &other) = delete;
 
-    Blocking_Queue(Blocking_Queue &&other) noexcept
+    // Blocking_Queue(Blocking_Queue &&other) noexcept:max_size(other.max_size.load()),queue(std::move(other.queue)),m(),cv()
+    // {
+    //     // max_size = other.max_size;
+    //     other.max_size = 0;
+    //     // while (!other.queue.empty())
+    //     // {
+    //     //     queue.emplace(std::move(other.queue.front()));
+    //     //     other.queue.pop();
+    //     // }
+    // }
+
+    Blocking_Queue(Blocking_Queue&& other) noexcept
+                : queue(std::move(other.queue)),
+                max_size(other.max_size.load(std::memory_order_relaxed)),
+                shutdown_flag(other.shutdown_flag.load(std::memory_order_relaxed)),
+                m(),      // mutex is not movable — default-construct
+                cv()
     {
-        max_size = other.max_size;
-        other.max_size = 0;
-        while (!other.queue.empty())
-        {
-            queue.emplace(std::move(other.queue.front()));
-            other.queue.pop();
-        }
+        // Leave 'other' in a valid (usually empty) state
+        other.max_size.store(0, std::memory_order_relaxed);
+        other.shutdown_flag.store(false, std::memory_order_relaxed);
+        // queue is already moved-from → valid but unspecified (usually empty)
     }
-    Blocking_Queue &operator=(Blocking_Queue &&other) noexcept
+
+
+    // Blocking_Queue &operator=(Blocking_Queue &&other) noexcept
+    // {
+    //     // move assign ctor
+    //     if (this != &other)
+    //     {
+    //         max_size = other.max_size.load();
+    //         other.max_size.store(0);
+    //         // while (!queue.empty())
+    //         // {
+    //         //     queue.pop();
+    //         // }
+    //         // while (!other.queue.empty())
+    //         // {
+    //         //     queue.emplace(std::move(other.queue.front()));
+    //         //     other.queue.pop();
+    //         // }
+    //     }
+    //     return *this;
+    // }
+
+
+    // Move assignment operator
+    Blocking_Queue& operator=(Blocking_Queue&& other) noexcept
     {
-        // move assign ctor
         if (this != &other)
         {
-            max_size = other.max_size;
-            other.max_size = 0;
-            while (!queue.empty())
-            {
-                queue.pop();
-            }
-            while (!other.queue.empty())
-            {
-                queue.emplace(std::move(other.queue.front()));
-                other.queue.pop();
-            }
+            // Move the queue (this replaces our current content)
+            queue = std::move(other.queue);
+
+            // Properly move the atomics
+            max_size.store(other.max_size.load(std::memory_order_relaxed),
+                        std::memory_order_relaxed);
+            shutdown_flag.store(other.shutdown_flag.load(std::memory_order_relaxed),
+                                std::memory_order_relaxed);
+
+            // Leave 'other' in a valid state
+            other.max_size.store(0, std::memory_order_relaxed);
+            other.shutdown_flag.store(false, std::memory_order_relaxed);
         }
         return *this;
     }

@@ -17,7 +17,7 @@ int main(int argc,char* argv[]){
         if (arg == "--queue")   queue_size = std::stoi(argv[++i]);
         if (arg == "--bufflen")   buff_len = std::stoi(argv[++i]);
     }
-    config.set_config(port,n_clients,max_events,n_workers,queue_size,buff_len);
+    config.set_config(port,n_clients,max_events,n_workers,queue_size*n_workers,buff_len);
     Server server(config);
     server.start();
 }
