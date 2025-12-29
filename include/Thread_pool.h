@@ -29,7 +29,7 @@ public:
     }
 
     void submit(std::function<void()>);
-    void create_pool(int N);
+    void create_pool(int N,int queue_size);
     void shutdown();
     void thread_func();
 };

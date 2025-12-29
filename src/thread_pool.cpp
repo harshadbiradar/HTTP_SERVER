@@ -15,9 +15,9 @@ void Thread_Pool::thread_func()
 }
 
 // template <size_t N>
-void Thread_Pool::create_pool(int N)
+void Thread_Pool::create_pool(int N,int queue_size)
 {   this->N=N;
-    BQ.set_size(N*1250);
+    BQ.set_size(queue_size);
     // //std::cout << " [INFO]:: Creating " << N << " Threads" << std::endl;
     for (int i = 0; i < N; i++)
     {
