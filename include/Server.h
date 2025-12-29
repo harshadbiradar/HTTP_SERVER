@@ -29,7 +29,7 @@ class Server{
             Server(Config config){
                 config.get_config(port, n_clients, max_events, n_workers, queue_size, buff_len);
                 events.reserve(max_events);
-                Worker_thread.create_pool(n_workers);
+                Worker_thread.create_pool(n_workers,queue_size);
                 Writable_queue.set_size(queue_size);
                 setup_server();
             }

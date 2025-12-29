@@ -32,5 +32,4 @@ inline std::string get_timestamp() {
 #define LOG_WARN(msg)    std::cerr << "[" << get_timestamp() << "] [WARN]  " << msg << std::endl
 #define LOG_ERROR(msg)   std::cerr << "[" << get_timestamp() << "] [ERROR] " << msg << std::endl
 #define LOG_DEBUG(msg)   std::cout << "[" << get_timestamp() << "] [DEBUG] " << msg << std::endl
-
 #endif

@@ -9,9 +9,9 @@ void Connection_manager::accept_all(int sock_fd,int epoll_fd,struct epoll_event 
     int retcode;
     while (true)
     {
-        std::cout << "In accept" << std::endl;
+        // std::cout << "In accept" << std::endl;
         client_fd = accept(sock_fd, (struct sockaddr *)&serverAddress, &len_sock);
-        std::cout << "Client fd is " << client_fd << std::endl;
+        // std::cout << "Client fd is " << client_fd << std::endl;
         if (client_fd == -1)
         {
             if (errno == EAGAIN || errno == EWOULDBLOCK)
@@ -40,6 +40,7 @@ void Connection_manager::accept_all(int sock_fd,int epoll_fd,struct epoll_event 
 
 
 void Connection_manager::close_connection(int fd,int epoll_fd,std::unordered_map<int,std::shared_ptr<Connection>>&live_connections){
+    //LOG_DEBUG("Closing connection: fd=" << fd << " | Remaining live: " << live_connections.size() - 1);
     int retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, fd, nullptr);
     if (retcode == -1)
     {
