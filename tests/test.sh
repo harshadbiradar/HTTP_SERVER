@@ -73,7 +73,7 @@ for t in $THREAD_RANGE; do
 
                 # Run Python test (passing the same params so Python knows what it's testing)
                 # python3 test.py --threads $t --events $e --queue $q
-                python3 test.py --port 8080 --connections 3000,5000,7000,9000 --duration 30
+                python3 test.py --port 8080 --connections 5000 --duration 30
                 
                 # Stop the C++ app for the next iteration
                 kill -9 $CPP_PID

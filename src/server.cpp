@@ -98,7 +98,7 @@ void Server::setup_server(){
     LOG_INFO("epoll instance created: epoll_fd=" << epoll_fd);
 
     // epoll event starts here.
-    event.events = EPOLLIN;
+    event.events = EPOLLIN|EPOLLET;
     event.data.fd = server_socket;
     retcode = epoll_ctl(epoll_fd, EPOLL_CTL_ADD, server_socket, &event);
     if (retcode == -1)
@@ -108,7 +108,7 @@ void Server::setup_server(){
         terminate();
     }
 
-    notify_event.events = EPOLLIN;
+    notify_event.events = EPOLLIN|EPOLLET;
     notify_event.data.fd = notify_fd;
     retcode = epoll_ctl(epoll_fd, EPOLL_CTL_ADD, notify_fd, &notify_event);
     if (retcode == -1)
@@ -190,7 +190,7 @@ void Server::handle_notify_fd(int notify_fd, std::unordered_map<int, std::shared
             // error here..
         }
         auto &my_conn = ref->second;
-        my_conn->event.events = EPOLLOUT;
+        my_conn->event.events = EPOLLOUT|EPOLLET;
         my_conn->write_buffer.append(temp_buffer); // in both empty and non empty cases...
         // the above takes care of consequent writes..
 
@@ -316,7 +316,7 @@ void Server::handle_client_fd(struct epoll_event &event,
             {
                 // std::cout << "[INFO] Write_buffer has been drained." << std::endl;
                 //LOG_DEBUG("Write buffer drained, switching to EPOLLIN: fd=" << my_conn->fd);
-                my_conn->event.events = EPOLLIN;
+                my_conn->event.events = EPOLLIN|EPOLLET;
                 // since here it is confirmed data is sent completely.
                 retcode = epoll_ctl(epoll_fd, EPOLL_CTL_MOD, my_conn->fd, &my_conn->event);
                 if (retcode == -1)

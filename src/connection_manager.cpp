@@ -23,7 +23,7 @@ void Connection_manager::accept_all(int sock_fd,int epoll_fd,struct epoll_event 
                 // also handle epoll_close,server_fd close
             }
         }
-        event.events = EPOLLIN;
+        event.events = EPOLLIN|EPOLLET;
         event.data.fd = client_fd;
         int flags = fcntl(client_fd, F_GETFL, 0);
         fcntl(client_fd, F_SETFL, flags | O_NONBLOCK);
