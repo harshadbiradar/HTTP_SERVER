@@ -1,26 +1,35 @@
-/*
+# Ignore everything by default
+*
 
-!.gitignore
-!*.cpp
-!*.h
+# Allow directories
+!*/
+
+# Allow source & project structure
+!src/**
+!include/**
+!tests/**
+!docs/**
+
+# Allow common project files
 !CMakeLists.txt
 !README.md
 !LICENSE
 !*.txt
 
-# Ignore executables and binaries (everywhere)
-!*/
-*/
-!*.*
+# Allow C/C++ source files
+!*.c
+!*.cpp
+!*.h
+!*.hpp
+
+# Ignore build artifacts explicitly
 *.o
 *.a
 *.so
 *.exe
 
-# Ignore editor and temp files
+# Ignore editor/temp files
 **/.vscode/
 *.swp
 *.swo
 *~
-
-

@@ -1,11 +1,11 @@
 #ifndef BLCK_QUE
 #define BLCK_QUE
 
-#include <iostream>
+#include"common_header.h"
 #include <queue>
 #include <mutex>
 #include <condition_variable>
-#include <utility>
+
 
 template <typename T>
 class Blocking_Queue
@@ -14,15 +14,16 @@ private:
     std::queue<T> queue;
     std::mutex m;
     std::condition_variable cv;
-    bool shutdown_flag = false;
-    int max_size;
+    std::atomic<bool> shutdown_flag = false;
+    std::atomic<int> max_size;
     bool is_full();
     int size();
 
 public:
-    Blocking_Queue(const int N)
-    {
-        max_size = N;
+    Blocking_Queue()
+    {   
+        //setting this as default, incase user forgot to set_size
+        max_size = 100;
     }
 
     Blocking_Queue(const Blocking_Queue &other) = delete;
@@ -64,6 +65,9 @@ public:
     T try_pop();
     int safe_size();
     void shutdown();
+    void set_size(int n){
+        max_size=n;
+    }
     // bool is_empty();
 };
 
@@ -79,7 +83,7 @@ void Blocking_Queue<T>::push(K &&data)
     }
     if (shutdown_flag)
     {
-        std::cout << " [WARNING]:: Push is called while SHUTDOWN is in progress, operation not allowed" << std::endl;
+        //std::cout << " [WARNING]:: Push is called while SHUTDOWN is in progress, operation not allowed" << std::endl;
         return;
     }
 
@@ -93,7 +97,7 @@ void Blocking_Queue<T>::push(K &&data)
 
     // queue is not full, so push.
     queue.emplace(std::forward<K>(data));
-    std::cout << " [INFO]:: Pushed data: "<< std::endl;
+    //std::cout << " [INFO]:: Pushed data: "<< std::endl;
     cv.notify_one();
 }
 
@@ -108,14 +112,14 @@ T Blocking_Queue<T>::pop()
         cv.wait(lock);
     }
     if (shutdown_flag && queue.empty()){
-        // std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
+        // //std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
         return T{};
     }
     /*so if shutdown is set, we break from this loop,
         giving thread chance to terminate from user side.*/
     // cv.wait(lock,[this]{return !queue.empty();});// logic explained in push, same here.
     T data = queue.front();
-    std::cout << " [INFO]:: Data poped: " << std::endl;
+    //std::cout << " [INFO]:: Data poped: " << std::endl;
     queue.pop();
     cv.notify_one();
     return data;
@@ -128,12 +132,13 @@ T Blocking_Queue<T>::try_pop()
     //this is a wait free pop,
     std::unique_lock<std::mutex> lock(m);
     if ( queue.empty()){
-        // std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
+        // //std::cout<<" [DEBUG]:: IN BQ POP in shutting down condition... "<<std::endl;
         return T{};
     }
     T data = queue.front();
-    std::cout << " [INFO]:: Data poped: " << std::endl;
+    //std::cout << " [INFO]:: Data poped: " << std::endl;
     queue.pop();
+    cv.notify_one();
     return data;
 }
 
@@ -159,10 +164,10 @@ template <typename T>
 void Blocking_Queue<T>::shutdown()
 {
     std::unique_lock<std::mutex> lock(m);
-    std::cout << " [INFO]:: SHUTDOWN for Blocking_Queue is being initiallized." << std::endl;
+    //std::cout << " [INFO]:: SHUTDOWN for Blocking_Queue is being initiallized." << std::endl;
     shutdown_flag = true;
     cv.notify_all();
-    std::cout << " [INFO]:: SHUTDOWN initiated." << std::endl;
+    //std::cout << " [INFO]:: SHUTDOWN initiated." << std::endl;
 }
 
 #endif

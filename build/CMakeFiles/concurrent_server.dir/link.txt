@@ -1,0 +1,1 @@
+/usr/bin/c++ -fsanitize=address,undefined CMakeFiles/concurrent_server.dir/src/thread_pool.cpp.o CMakeFiles/concurrent_server.dir/src/connection_manager.cpp.o CMakeFiles/concurrent_server.dir/src/server.cpp.o CMakeFiles/concurrent_server.dir/src/main.cpp.o -o concurrent_server 
