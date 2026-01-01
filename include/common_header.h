@@ -17,7 +17,8 @@
 #include <chrono>
 #include <iomanip>
 #include <sstream>
-
+#include <netinet/tcp.h>
+#include<csignal>
 inline std::string get_timestamp() {
     auto now = std::chrono::system_clock::now();
     auto tt = std::chrono::system_clock::to_time_t(now);

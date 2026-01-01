@@ -1,6 +1,8 @@
 #include"../include/Server.h"
+#include<csignal>
 
 int main(int argc,char* argv[]){
+    signal(SIGPIPE, SIG_IGN);
     std::cout<<"The main program started"<<std::endl;
     Config config;
     int port=8080;

@@ -1,0 +1,3882 @@
+Running: Threads=5, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 19:16:48.188] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:16:48.192] [INFO]  Configuration: port=8080 | workers=5 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 19:16:48.192] [INFO]  Server socket created: fd=3
+[2025-12-29 19:16:48.192] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:16:48.192] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+
+Test interrupted by user
+Running: Threads=5, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 19:17:02.048] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:17:02.049] [INFO]  Configuration: port=8080 | workers=5 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 19:17:02.049] [INFO]  Server socket created: fd=3
+[2025-12-29 19:17:02.049] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:17:02.049] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+
+Test interrupted by user
+Running: Threads=5, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 19:18:05.324] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:18:05.327] [INFO]  Configuration: port=8080 | workers=5 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 19:18:05.327] [INFO]  Server socket created: fd=3
+[2025-12-29 19:18:05.327] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:18:05.327] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8939.67      280458     322.40ms   322.06ms   341.27ms   380.41ms   0     
+5000     8739.22      280000     540.20ms   540.76ms   573.48ms   635.00ms   0     
+7000     8585.53      283400     748.81ms   767.75ms   905.66ms   947.36ms   0     
+9000     8307.07      281367     969.87ms   989.24ms   1189.38ms  1306.10ms  0     
+================================================================================
+
+Peak Performance:
+  8939.67 RPS at 3000 connections
+  (280,458 requests in 31.37s)
+
+Running: Threads=5, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 19:20:18.991] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:20:18.995] [INFO]  Configuration: port=8080 | workers=5 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 19:20:18.995] [INFO]  Server socket created: fd=3
+[2025-12-29 19:20:18.995] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:20:18.995] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8676.61      273000     331.22ms   333.26ms   351.74ms   392.88ms   0     
+5000     8797.02      280615     536.62ms   537.62ms   593.72ms   664.74ms   0     
+7000     8669.90      287000     743.70ms   757.80ms   898.16ms   959.61ms   0     
+9000     8347.92      285821     965.03ms   986.72ms   1173.41ms  1224.41ms  0     
+================================================================================
+
+Peak Performance:
+  8797.02 RPS at 5000 connections
+  (280,615 requests in 31.90s)
+
+Running: Threads=5, MaxEvents=4096, Queue=16384
+The main program started
+[2025-12-29 19:22:34.247] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:22:34.248] [INFO]  Configuration: port=8080 | workers=5 | max_events=4096 | queue_size=16384 | buff_len=8192
+[2025-12-29 19:22:34.248] [INFO]  Server socket created: fd=3
+[2025-12-29 19:22:34.248] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:22:34.248] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8791.17      276000     327.30ms   325.26ms   348.38ms   406.25ms   0     
+5000     8923.31      285181     528.30ms   527.55ms   577.66ms   630.85ms   0     
+7000     8781.97      287536     733.72ms   757.28ms   854.54ms   963.47ms   0     
+9000     8379.93      287533     963.01ms   982.74ms   1151.86ms  1215.88ms  0     
+================================================================================
+
+Peak Performance:
+  8923.31 RPS at 5000 connections
+  (285,181 requests in 31.96s)
+
+Running: Threads=5, MaxEvents=4096, Queue=32768
+The main program started
+[2025-12-29 19:24:48.828] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:24:48.832] [INFO]  Configuration: port=8080 | workers=5 | max_events=4096 | queue_size=32768 | buff_len=8192
+[2025-12-29 19:24:48.832] [INFO]  Server socket created: fd=3
+[2025-12-29 19:24:48.832] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:24:48.832] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     9029.29      283292     319.24ms   318.78ms   342.30ms   374.13ms   0     
+5000     9003.96      289408     523.57ms   524.95ms   574.18ms   621.90ms   0     
+7000     8768.61      288057     737.63ms   749.38ms   911.12ms   941.26ms   0     
+9000     8452.29      284182     956.94ms   980.12ms   1163.75ms  1269.82ms  0     
+================================================================================
+
+Peak Performance:
+  9029.29 RPS at 3000 connections
+  (283,292 requests in 31.37s)
+
+Running: Threads=5, MaxEvents=6144, Queue=4096
+The main program started
+[2025-12-29 19:27:01.685] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:27:01.687] [INFO]  Configuration: port=8080 | workers=5 | max_events=6144 | queue_size=4096 | buff_len=8192
+[2025-12-29 19:27:01.687] [INFO]  Server socket created: fd=3
+[2025-12-29 19:27:01.687] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:27:01.687] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8989.27      281780     320.80ms   321.27ms   340.50ms   379.45ms   0     
+5000     8950.48      285610     527.41ms   526.87ms   578.37ms   645.96ms   0     
+7000     8674.15      284633     744.38ms   747.62ms   804.69ms   877.97ms   0     
+9000     8321.20      281153     967.37ms   966.84ms   1112.93ms  1157.26ms  0     
+================================================================================
+
+Peak Performance:
+  8989.27 RPS at 3000 connections
+  (281,780 requests in 31.35s)
+
+Running: Threads=5, MaxEvents=6144, Queue=8192
+The main program started
+[2025-12-29 19:29:15.665] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:29:15.669] [INFO]  Configuration: port=8080 | workers=5 | max_events=6144 | queue_size=8192 | buff_len=8192
+[2025-12-29 19:29:15.669] [INFO]  Server socket created: fd=3
+[2025-12-29 19:29:15.669] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:29:15.669] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8921.27      279656     323.31ms   324.82ms   347.33ms   373.05ms   0     
+5000     8929.09      285836     527.91ms   528.75ms   564.30ms   638.96ms   0     
+7000     8623.34      284094     747.33ms   750.07ms   823.46ms   887.06ms   0     
+9000     8396.48      287609     963.84ms   963.28ms   1136.28ms  1194.47ms  0     
+================================================================================
+
+Peak Performance:
+  8929.09 RPS at 5000 connections
+  (285,836 requests in 32.01s)
+
+Running: Threads=5, MaxEvents=6144, Queue=16384
+The main program started
+[2025-12-29 19:31:30.337] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:31:30.339] [INFO]  Configuration: port=8080 | workers=5 | max_events=6144 | queue_size=16384 | buff_len=8192
+[2025-12-29 19:31:30.339] [INFO]  Server socket created: fd=3
+[2025-12-29 19:31:30.339] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:31:30.339] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     9029.26      283432     319.51ms   319.05ms   342.70ms   363.81ms   0     
+5000     8761.51      280540     537.91ms   540.52ms   574.10ms   636.79ms   0     
+7000     8712.17      285242     743.03ms   744.59ms   825.49ms   887.38ms   0     
+9000     8422.98      285519     961.78ms   961.05ms   1128.20ms  1275.71ms  0     
+================================================================================
+
+Peak Performance:
+  9029.26 RPS at 3000 connections
+  (283,432 requests in 31.39s)
+
+Running: Threads=5, MaxEvents=6144, Queue=32768
+The main program started
+[2025-12-29 19:33:43.136] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:33:43.138] [INFO]  Configuration: port=8080 | workers=5 | max_events=6144 | queue_size=32768 | buff_len=8192
+[2025-12-29 19:33:43.139] [INFO]  Server socket created: fd=3
+[2025-12-29 19:33:43.139] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:33:43.139] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     9060.43      284177     318.48ms   319.79ms   342.07ms   368.34ms   0     
+5000     8817.57      284217     534.75ms   535.80ms   574.25ms   653.35ms   0     
+7000     8489.83      280000     760.42ms   763.59ms   830.17ms   902.39ms   0     
+9000     8460.36      288000     952.08ms   951.95ms   1132.95ms  1192.50ms  0     
+================================================================================
+
+Peak Performance:
+  9060.43 RPS at 3000 connections
+  (284,177 requests in 31.36s)
+
+Running: Threads=5, MaxEvents=8192, Queue=4096
+The main program started
+[2025-12-29 19:35:57.778] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:35:57.779] [INFO]  Configuration: port=8080 | workers=5 | max_events=8192 | queue_size=4096 | buff_len=8192
+[2025-12-29 19:35:57.780] [INFO]  Server socket created: fd=3
+[2025-12-29 19:35:57.781] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:35:57.781] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     9100.69      285202     317.32ms   318.75ms   336.41ms   359.92ms   0     
+5000     9052.88      290000     521.32ms   522.11ms   549.67ms   618.84ms   0     
+7000     8750.88      287491     737.31ms   739.02ms   783.03ms   903.57ms   0     
+9000     8202.62      279104     975.72ms   973.36ms   1180.67ms  1410.76ms  0     
+================================================================================
+
+Peak Performance:
+  9100.69 RPS at 3000 connections
+  (285,202 requests in 31.34s)
+
+Running: Threads=5, MaxEvents=8192, Queue=8192
+The main program started
+[2025-12-29 19:38:12.093] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:38:12.096] [INFO]  Configuration: port=8080 | workers=5 | max_events=8192 | queue_size=8192 | buff_len=8192
+[2025-12-29 19:38:12.096] [INFO]  Server socket created: fd=3
+[2025-12-29 19:38:12.096] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:38:12.096] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8977.02      281399     321.04ms   320.97ms   344.52ms   368.73ms   0     
+5000     8729.58      280000     539.37ms   540.10ms   573.91ms   629.84ms   0     
+7000     8606.32      282999     750.38ms   749.05ms   839.14ms   893.69ms   0     
+9000     8443.36      285506     959.88ms   953.67ms   1133.86ms  1253.97ms  0     
+================================================================================
+
+Peak Performance:
+  8977.02 RPS at 3000 connections
+  (281,399 requests in 31.35s)
+
+Running: Threads=5, MaxEvents=8192, Queue=16384
+The main program started
+[2025-12-29 19:40:24.804] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:40:24.806] [INFO]  Configuration: port=8080 | workers=5 | max_events=8192 | queue_size=16384 | buff_len=8192
+[2025-12-29 19:40:24.806] [INFO]  Server socket created: fd=3
+[2025-12-29 19:40:24.806] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:40:24.806] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8869.99      277921     325.42ms   327.48ms   344.45ms   361.44ms   0     
+5000     8841.65      283263     535.36ms   537.16ms   571.02ms   622.10ms   0     
+7000     8529.46      282319     756.23ms   757.30ms   825.14ms   906.98ms   0     
+9000     8420.76      284208     960.32ms   965.92ms   1117.91ms  1170.62ms  0     
+================================================================================
+
+Peak Performance:
+  8869.99 RPS at 3000 connections
+  (277,921 requests in 31.33s)
+
+Running: Threads=5, MaxEvents=8192, Queue=32768
+The main program started
+[2025-12-29 19:42:38.812] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:42:38.814] [INFO]  Configuration: port=8080 | workers=5 | max_events=8192 | queue_size=32768 | buff_len=8192
+[2025-12-29 19:42:38.814] [INFO]  Server socket created: fd=3
+[2025-12-29 19:42:38.815] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:42:38.815] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     9055.53      282504     319.70ms   320.81ms   344.04ms   362.62ms   0     
+5000     8908.65      285077     529.22ms   528.51ms   575.76ms   651.90ms   0     
+7000     8375.37      277349     770.61ms   773.03ms   857.01ms   938.51ms   0     
+9000     8327.51      283527     964.55ms   961.71ms   1120.47ms  1186.01ms  0     
+================================================================================
+
+Peak Performance:
+  9055.53 RPS at 3000 connections
+  (282,504 requests in 31.20s)
+
+Running: Threads=6, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 19:44:52.993] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:44:52.994] [INFO]  Configuration: port=8080 | workers=6 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 19:44:52.994] [INFO]  Server socket created: fd=3
+[2025-12-29 19:44:52.994] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:44:52.994] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8867.34      276987     325.64ms   326.06ms   349.71ms   387.80ms   0     
+5000     8695.79      278040     542.22ms   543.14ms   571.83ms   654.49ms   0     
+7000     8377.51      276328     770.08ms   776.77ms   937.17ms   965.85ms   0     
+9000     8282.93      279309     974.40ms   1002.92ms  1177.67ms  1240.59ms  0     
+================================================================================
+
+Peak Performance:
+  8867.34 RPS at 3000 connections
+  (276,987 requests in 31.24s)
+
+Running: Threads=6, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 19:47:06.854] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:47:05.411] [INFO]  Configuration: port=8080 | workers=6 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 19:47:05.411] [INFO]  Server socket created: fd=3
+[2025-12-29 19:47:05.412] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:47:05.412] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8859.06      277770     325.23ms   324.88ms   344.14ms   383.16ms   0     
+5000     8688.13      277372     543.79ms   545.60ms   568.34ms   599.36ms   0     
+7000     8334.02      273000     774.45ms   789.93ms   914.49ms   1096.97ms  0     
+9000     8419.13      281665     964.21ms   977.58ms   1179.07ms  1236.91ms  0     
+================================================================================
+
+Peak Performance:
+  8859.06 RPS at 3000 connections
+  (277,770 requests in 31.35s)
+
+Running: Threads=6, MaxEvents=4096, Queue=16384
+The main program started
+[2025-12-29 19:49:18.767] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:49:18.768] [INFO]  Configuration: port=8080 | workers=6 | max_events=4096 | queue_size=16384 | buff_len=8192
+[2025-12-29 19:49:18.768] [INFO]  Server socket created: fd=3
+[2025-12-29 19:49:18.768] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:49:18.768] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8853.33      277768     325.80ms   325.97ms   345.07ms   371.96ms   0     
+5000     8637.26      279042     545.57ms   546.70ms   591.86ms   653.54ms   0     
+7000     8516.51      280000     758.46ms   777.65ms   916.22ms   954.53ms   0     
+9000     8292.20      283819     973.37ms   994.18ms   1136.49ms  1234.08ms  0     
+================================================================================
+
+Peak Performance:
+  8853.33 RPS at 3000 connections
+  (277,768 requests in 31.37s)
+
+Running: Threads=6, MaxEvents=4096, Queue=32768
+The main program started
+[2025-12-29 19:51:33.274] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:51:33.275] [INFO]  Configuration: port=8080 | workers=6 | max_events=4096 | queue_size=32768 | buff_len=8192
+[2025-12-29 19:51:33.276] [INFO]  Server socket created: fd=3
+[2025-12-29 19:51:33.276] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:51:33.276] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8874.91      277873     325.26ms   325.95ms   348.83ms   385.05ms   0     
+5000     8768.38      281004     538.24ms   538.17ms   571.50ms   637.53ms   0     
+7000     8301.65      275396     771.83ms   788.01ms   929.28ms   963.98ms   0     
+9000     8001.36      273018     1002.41ms  1027.84ms  1229.36ms  1270.48ms  0     
+================================================================================
+
+Peak Performance:
+  8874.91 RPS at 3000 connections
+  (277,873 requests in 31.31s)
+
+Running: Threads=6, MaxEvents=6144, Queue=4096
+The main program started
+[2025-12-29 19:53:47.650] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:53:47.655] [INFO]  Configuration: port=8080 | workers=6 | max_events=6144 | queue_size=4096 | buff_len=8192
+[2025-12-29 19:53:47.655] [INFO]  Server socket created: fd=3
+[2025-12-29 19:53:47.655] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:53:47.655] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8801.50      274339     328.95ms   328.95ms   351.33ms   370.93ms   0     
+5000     8706.33      278565     541.86ms   541.52ms   587.04ms   628.52ms   0     
+7000     8411.38      274239     769.08ms   766.75ms   894.68ms   983.95ms   0     
+9000     8133.92      276465     997.43ms   1000.48ms  1172.51ms  1242.58ms  0     
+================================================================================
+
+Peak Performance:
+  8801.50 RPS at 3000 connections
+  (274,339 requests in 31.17s)
+
+Running: Threads=6, MaxEvents=6144, Queue=8192
+The main program started
+[2025-12-29 19:55:59.530] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:55:59.532] [INFO]  Configuration: port=8080 | workers=6 | max_events=6144 | queue_size=8192 | buff_len=8192
+[2025-12-29 19:55:59.532] [INFO]  Server socket created: fd=3
+[2025-12-29 19:55:59.536] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:55:59.536] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8796.71      276000     327.67ms   328.38ms   344.57ms   383.18ms   0     
+5000     8708.87      278716     542.24ms   543.22ms   571.22ms   642.71ms   0     
+7000     8510.87      280000     757.42ms   756.22ms   866.53ms   929.09ms   0     
+9000     8359.71      282129     966.36ms   971.54ms   1139.63ms  1175.08ms  0     
+================================================================================
+
+Peak Performance:
+  8796.71 RPS at 3000 connections
+  (276,000 requests in 31.38s)
+
+Running: Threads=6, MaxEvents=6144, Queue=16384
+The main program started
+[2025-12-29 19:58:13.238] [INFO]  === SERVER STARTUP ===
+[2025-12-29 19:58:13.239] [INFO]  Configuration: port=8080 | workers=6 | max_events=6144 | queue_size=16384 | buff_len=8192
+[2025-12-29 19:58:13.239] [INFO]  Server socket created: fd=3
+[2025-12-29 19:58:13.240] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 19:58:13.240] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8763.80      275632     328.41ms   327.85ms   352.14ms   389.27ms   0     
+5000     8701.74      278673     543.28ms   542.63ms   580.14ms   652.33ms   0     
+7000     8509.43      280000     755.94ms   754.94ms   817.97ms   934.98ms   0     
+9000     8100.97      275059     999.13ms   986.41ms   1169.62ms  1290.34ms  0     
+================================================================================
+
+Peak Performance:
+  8763.80 RPS at 3000 connections
+  (275,632 requests in 31.45s)
+
+Running: Threads=6, MaxEvents=6144, Queue=32768
+The main program started
+[2025-12-29 20:00:27.107] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:00:27.109] [INFO]  Configuration: port=8080 | workers=6 | max_events=6144 | queue_size=32768 | buff_len=8192
+[2025-12-29 20:00:27.112] [INFO]  Server socket created: fd=3
+[2025-12-29 20:00:27.112] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:00:27.112] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8817.83      276153     326.86ms   326.90ms   348.36ms   378.93ms   0     
+5000     8695.24      280000     540.61ms   542.59ms   582.55ms   638.24ms   0     
+7000     8418.19      277395     765.59ms   765.24ms   865.79ms   916.97ms   0     
+9000     8182.99      277900     986.72ms   982.11ms   1192.13ms  1243.79ms  0     
+================================================================================
+
+Peak Performance:
+  8817.83 RPS at 3000 connections
+  (276,153 requests in 31.32s)
+
+Running: Threads=6, MaxEvents=8192, Queue=4096
+The main program started
+[2025-12-29 20:02:39.489] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:02:39.492] [INFO]  Configuration: port=8080 | workers=6 | max_events=8192 | queue_size=4096 | buff_len=8192
+[2025-12-29 20:02:39.492] [INFO]  Server socket created: fd=3
+[2025-12-29 20:02:39.492] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:02:39.492] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8797.50      275744     328.10ms   328.65ms   348.65ms   389.35ms   0     
+5000     8602.84      276226     548.40ms   549.76ms   577.85ms   649.15ms   0     
+7000     8464.10      277901     763.21ms   763.30ms   868.07ms   915.07ms   0     
+9000     8432.66      286498     961.53ms   968.78ms   1125.15ms  1226.47ms  0     
+================================================================================
+
+Peak Performance:
+  8797.50 RPS at 3000 connections
+  (275,744 requests in 31.34s)
+
+Running: Threads=6, MaxEvents=8192, Queue=8192
+The main program started
+[2025-12-29 20:04:53.530] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:04:53.532] [INFO]  Configuration: port=8080 | workers=6 | max_events=8192 | queue_size=8192 | buff_len=8192
+[2025-12-29 20:04:53.532] [INFO]  Server socket created: fd=3
+[2025-12-29 20:04:53.532] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:04:53.532] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8824.67      275986     327.46ms   329.49ms   346.13ms   362.31ms   0     
+5000     8747.50      279881     539.65ms   540.86ms   582.78ms   653.69ms   0     
+7000     8381.72      274351     771.29ms   774.79ms   807.46ms   893.15ms   0     
+9000     8303.28      279000     974.54ms   978.38ms   1173.79ms  1299.33ms  0     
+================================================================================
+
+Peak Performance:
+  8824.67 RPS at 3000 connections
+  (275,986 requests in 31.27s)
+
+Running: Threads=6, MaxEvents=8192, Queue=16384
+The main program started
+[2025-12-29 20:07:06.891] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:07:06.894] [INFO]  Configuration: port=8080 | workers=6 | max_events=8192 | queue_size=16384 | buff_len=8192
+[2025-12-29 20:07:06.896] [INFO]  Server socket created: fd=3
+[2025-12-29 20:07:06.899] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:07:06.899] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8826.84      275744     327.67ms   328.54ms   345.25ms   365.30ms   0     
+5000     8573.93      275000     549.42ms   549.56ms   616.55ms   663.94ms   0     
+7000     8350.06      273123     772.70ms   776.29ms   851.31ms   946.80ms   0     
+9000     8248.63      280354     975.48ms   974.56ms   1124.84ms  1160.30ms  0     
+================================================================================
+
+Peak Performance:
+  8826.84 RPS at 3000 connections
+  (275,744 requests in 31.24s)
+
+Running: Threads=6, MaxEvents=8192, Queue=32768
+The main program started
+[2025-12-29 20:09:19.023] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:09:19.040] [INFO]  Configuration: port=8080 | workers=6 | max_events=8192 | queue_size=32768 | buff_len=8192
+[2025-12-29 20:09:19.040] [INFO]  Server socket created: fd=3
+[2025-12-29 20:09:19.041] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:09:19.041] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8838.20      277636     326.01ms   326.63ms   341.19ms   361.08ms   0     
+5000     8639.29      277139     545.02ms   547.61ms   573.39ms   648.82ms   0     
+7000     8393.59      274935     767.46ms   769.00ms   870.43ms   945.13ms   0     
+9000     8226.43      279948     982.09ms   981.85ms   1177.25ms  1200.63ms  0     
+================================================================================
+
+Peak Performance:
+  8838.20 RPS at 3000 connections
+  (277,636 requests in 31.41s)
+
+Running: Threads=7, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 20:11:32.740] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:11:32.741] [INFO]  Configuration: port=8080 | workers=7 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 20:11:32.742] [INFO]  Server socket created: fd=3
+[2025-12-29 20:11:32.742] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:11:32.744] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8690.20      272690     332.29ms   332.93ms   353.17ms   385.30ms   0     
+5000     8567.96      273626     550.88ms   550.53ms   586.01ms   648.32ms   0     
+7000     8359.41      276826     770.92ms   782.65ms   933.91ms   978.57ms   0     
+9000     8212.11      277547     985.53ms   1021.05ms  1178.75ms  1231.37ms  0     
+================================================================================
+
+Peak Performance:
+  8690.20 RPS at 3000 connections
+  (272,690 requests in 31.38s)
+
+Running: Threads=7, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 20:13:46.427] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:13:46.430] [INFO]  Configuration: port=8080 | workers=7 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 20:13:46.434] [INFO]  Server socket created: fd=3
+[2025-12-29 20:13:46.434] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:13:46.434] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8648.90      271405     333.44ms   333.62ms   357.67ms   376.87ms   0     
+5000     8541.60      274150     553.07ms   553.59ms   588.65ms   671.92ms   0     
+7000     8250.56      272907     781.23ms   791.00ms   939.94ms   989.99ms   0     
+9000     7977.27      270827     1009.87ms  1034.00ms  1188.61ms  1257.59ms  0     
+================================================================================
+
+Peak Performance:
+  8648.90 RPS at 3000 connections
+  (271,405 requests in 31.38s)
+
+Running: Threads=7, MaxEvents=4096, Queue=16384
+The main program started
+[2025-12-29 20:15:58.856] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:15:58.859] [INFO]  Configuration: port=8080 | workers=7 | max_events=4096 | queue_size=16384 | buff_len=8192
+[2025-12-29 20:15:58.859] [INFO]  Server socket created: fd=3
+[2025-12-29 20:15:58.859] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:15:58.859] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8648.63      271215     333.64ms   333.67ms   351.95ms   364.72ms   0     
+5000     8479.15      271072     555.82ms   558.38ms   578.79ms   660.40ms   0     
+7000     8288.29      273000     779.84ms   797.69ms   951.81ms   991.44ms   0     
+9000     8028.58      272877     1005.89ms  1022.70ms  1214.26ms  1262.53ms  0     
+================================================================================
+
+Peak Performance:
+  8648.63 RPS at 3000 connections
+  (271,215 requests in 31.36s)
+
+Running: Threads=7, MaxEvents=4096, Queue=32768
+The main program started
+[2025-12-29 20:18:12.414] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:18:12.417] [INFO]  Configuration: port=8080 | workers=7 | max_events=4096 | queue_size=32768 | buff_len=8192
+[2025-12-29 20:18:12.417] [INFO]  Server socket created: fd=3
+[2025-12-29 20:18:12.417] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:18:12.417] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8645.31      271508     333.20ms   332.53ms   352.32ms   398.43ms   0     
+5000     8549.34      274670     550.26ms   552.64ms   586.84ms   645.48ms   0     
+7000     8372.48      273882     770.26ms   786.73ms   929.49ms   980.02ms   0     
+9000     8112.51      271630     997.90ms   1021.65ms  1203.27ms  1243.50ms  0     
+================================================================================
+
+Peak Performance:
+  8645.31 RPS at 3000 connections
+  (271,508 requests in 31.41s)
+
+Running: Threads=7, MaxEvents=6144, Queue=4096
+The main program started
+[2025-12-29 20:20:25.526] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:20:25.528] [INFO]  Configuration: port=8080 | workers=7 | max_events=6144 | queue_size=4096 | buff_len=8192
+[2025-12-29 20:20:25.528] [INFO]  Server socket created: fd=3
+[2025-12-29 20:20:25.528] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:20:25.528] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8732.88      273000     330.56ms   330.27ms   349.95ms   379.11ms   0     
+5000     8538.99      275000     551.89ms   552.12ms   579.12ms   646.80ms   0     
+7000     8260.84      273000     777.85ms   774.08ms   883.98ms   933.94ms   0     
+9000     8081.98      274625     997.61ms   1004.60ms  1102.62ms  1191.25ms  0     
+================================================================================
+
+Peak Performance:
+  8732.88 RPS at 3000 connections
+  (273,000 requests in 31.26s)
+
+Running: Threads=7, MaxEvents=6144, Queue=8192
+The main program started
+[2025-12-29 20:22:37.730] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:22:37.731] [INFO]  Configuration: port=8080 | workers=7 | max_events=6144 | queue_size=8192 | buff_len=8192
+[2025-12-29 20:22:37.731] [INFO]  Server socket created: fd=3
+[2025-12-29 20:22:37.732] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:22:37.732] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8374.56      263505     343.51ms   341.54ms   374.65ms   397.90ms   0     
+5000     8507.96      272208     555.86ms   556.81ms   579.19ms   718.05ms   0     
+7000     8245.08      273000     781.54ms   785.26ms   825.13ms   905.23ms   0     
+9000     8028.87      272050     1007.06ms  1002.57ms  1171.81ms  1232.07ms  0     
+================================================================================
+
+Peak Performance:
+  8507.96 RPS at 5000 connections
+  (272,208 requests in 31.99s)
+
+Running: Threads=7, MaxEvents=6144, Queue=16384
+The main program started
+[2025-12-29 20:24:51.516] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:24:51.523] [INFO]  Configuration: port=8080 | workers=7 | max_events=6144 | queue_size=16384 | buff_len=8192
+[2025-12-29 20:24:51.523] [INFO]  Server socket created: fd=3
+[2025-12-29 20:24:51.523] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:24:51.523] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8739.84      274249     330.46ms   331.98ms   353.20ms   373.48ms   0     
+5000     8524.94      272465     553.68ms   555.17ms   584.72ms   672.19ms   0     
+7000     8201.61      270087     785.52ms   783.30ms   882.21ms   972.04ms   0     
+9000     8045.67      271893     1003.50ms  1011.97ms  1150.18ms  1209.72ms  0     
+================================================================================
+
+Peak Performance:
+  8739.84 RPS at 3000 connections
+  (274,249 requests in 31.38s)
+
+Running: Threads=7, MaxEvents=6144, Queue=32768
+The main program started
+[2025-12-29 20:27:04.825] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:27:04.826] [INFO]  Configuration: port=8080 | workers=7 | max_events=6144 | queue_size=32768 | buff_len=8192
+[2025-12-29 20:27:04.826] [INFO]  Server socket created: fd=3
+[2025-12-29 20:27:04.826] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:27:04.826] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8685.60      271788     332.32ms   330.75ms   351.88ms   392.65ms   0     
+5000     8581.43      275000     550.90ms   551.29ms   576.08ms   648.13ms   0     
+7000     8325.06      273000     774.00ms   775.01ms   856.61ms   986.25ms   0     
+9000     8054.13      273856     1003.12ms  999.23ms   1190.75ms  1259.64ms  0     
+================================================================================
+
+Peak Performance:
+  8685.60 RPS at 3000 connections
+  (271,788 requests in 31.29s)
+
+Running: Threads=7, MaxEvents=8192, Queue=4096
+The main program started
+[2025-12-29 20:29:16.653] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:29:16.653] [INFO]  Configuration: port=8080 | workers=7 | max_events=8192 | queue_size=4096 | buff_len=8192
+[2025-12-29 20:29:16.653] [INFO]  Server socket created: fd=3
+[2025-12-29 20:29:16.653] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:29:16.653] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8704.04      272157     331.98ms   332.01ms   352.48ms   386.68ms   0     
+5000     8598.38      275000     548.71ms   550.16ms   609.82ms   655.48ms   0     
+7000     8410.56      278357     765.00ms   768.61ms   867.80ms   910.55ms   0     
+9000     7964.14      270000     1008.52ms  1001.72ms  1193.03ms  1558.72ms  0     
+================================================================================
+
+Peak Performance:
+  8704.04 RPS at 3000 connections
+  (272,157 requests in 31.27s)
+
+Running: Threads=7, MaxEvents=8192, Queue=8192
+The main program started
+[2025-12-29 20:31:30.145] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:31:30.151] [INFO]  Configuration: port=8080 | workers=7 | max_events=8192 | queue_size=8192 | buff_len=8192
+[2025-12-29 20:31:30.151] [INFO]  Server socket created: fd=3
+[2025-12-29 20:31:30.151] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:31:30.151] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8718.22      272520     331.28ms   331.88ms   349.08ms   385.56ms   0     
+5000     8486.79      271293     555.97ms   557.03ms   580.48ms   604.03ms   0     
+7000     8230.02      271889     785.33ms   777.55ms   926.69ms   958.19ms   0     
+9000     8043.61      272952     1001.04ms  1005.15ms  1101.23ms  1179.98ms  0     
+================================================================================
+
+Peak Performance:
+  8718.22 RPS at 3000 connections
+  (272,520 requests in 31.26s)
+
+Running: Threads=7, MaxEvents=8192, Queue=16384
+The main program started
+[2025-12-29 20:33:43.458] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:33:43.461] [INFO]  Configuration: port=8080 | workers=7 | max_events=8192 | queue_size=16384 | buff_len=8192
+[2025-12-29 20:33:43.463] [INFO]  Server socket created: fd=3
+[2025-12-29 20:33:43.463] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:33:43.463] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8602.92      269825     335.85ms   334.91ms   364.54ms   398.87ms   0     
+5000     8586.00      275000     549.72ms   550.73ms   575.87ms   660.93ms   0     
+7000     8352.31      275770     773.60ms   776.40ms   831.47ms   989.81ms   0     
+9000     7971.02      269613     1010.91ms  1003.28ms  1217.24ms  1242.91ms  0     
+================================================================================
+
+Peak Performance:
+  8602.92 RPS at 3000 connections
+  (269,825 requests in 31.36s)
+
+Running: Threads=7, MaxEvents=8192, Queue=32768
+The main program started
+[2025-12-29 20:35:55.201] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:35:55.202] [INFO]  Configuration: port=8080 | workers=7 | max_events=8192 | queue_size=32768 | buff_len=8192
+[2025-12-29 20:35:55.202] [INFO]  Server socket created: fd=3
+[2025-12-29 20:35:55.203] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:35:55.204] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8673.90      272865     332.13ms   332.15ms   347.66ms   382.62ms   0     
+5000     8569.89      275000     550.15ms   551.02ms   580.94ms   642.41ms   0     
+7000     8335.79      274076     772.49ms   768.62ms   875.61ms   937.87ms   0     
+9000     7988.28      271590     1003.51ms  1006.86ms  1120.66ms  1232.46ms  0     
+================================================================================
+
+Peak Performance:
+  8673.90 RPS at 3000 connections
+  (272,865 requests in 31.46s)
+
+Running: Threads=8, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 20:38:08.813] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:38:08.817] [INFO]  Configuration: port=8080 | workers=8 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 20:38:08.817] [INFO]  Server socket created: fd=3
+[2025-12-29 20:38:08.817] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:38:08.818] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8633.98      271305     334.14ms   331.75ms   363.96ms   393.22ms   0     
+5000     8447.40      271331     558.97ms   558.94ms   582.97ms   670.02ms   0     
+7000     8290.40      271719     780.57ms   796.45ms   915.08ms   1019.67ms  0     
+9000     7926.89      269232     1019.71ms  1037.26ms  1222.99ms  1479.28ms  0     
+================================================================================
+
+Peak Performance:
+  8633.98 RPS at 3000 connections
+  (271,305 requests in 31.42s)
+
+Running: Threads=8, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 20:40:22.051] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:40:22.055] [INFO]  Configuration: port=8080 | workers=8 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 20:40:22.055] [INFO]  Server socket created: fd=3
+[2025-12-29 20:40:22.055] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:40:22.055] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8621.39      270000     334.53ms   333.91ms   349.36ms   392.76ms   0     
+5000     8403.59      269881     562.90ms   562.32ms   639.95ms   716.52ms   0     
+7000     8153.30      266674     790.70ms   811.05ms   926.43ms   1181.56ms  0     
+9000     8004.55      270000     1008.28ms  1038.78ms  1214.96ms  1288.66ms  0     
+================================================================================
+
+Peak Performance:
+  8621.39 RPS at 3000 connections
+  (270,000 requests in 31.32s)
+
+Running: Threads=8, MaxEvents=4096, Queue=16384
+The main program started
+[2025-12-29 20:42:33.228] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:42:33.231] [INFO]  Configuration: port=8080 | workers=8 | max_events=4096 | queue_size=16384 | buff_len=8192
+[2025-12-29 20:42:33.231] [INFO]  Server socket created: fd=3
+[2025-12-29 20:42:33.231] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:42:33.231] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8649.13      270000     334.62ms   334.57ms   355.01ms   407.74ms   0     
+5000     8514.69      272606     553.44ms   552.98ms   584.18ms   636.71ms   0     
+7000     8286.35      273000     780.02ms   795.33ms   954.54ms   1017.84ms  0     
+9000     7985.40      270000     1007.91ms  1020.21ms  1239.73ms  1301.09ms  0     
+================================================================================
+
+Peak Performance:
+  8649.13 RPS at 3000 connections
+  (270,000 requests in 31.22s)
+
+Running: Threads=8, MaxEvents=4096, Queue=32768
+The main program started
+[2025-12-29 20:44:46.347] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:44:46.350] [INFO]  Configuration: port=8080 | workers=8 | max_events=4096 | queue_size=32768 | buff_len=8192
+[2025-12-29 20:44:46.350] [INFO]  Server socket created: fd=3
+[2025-12-29 20:44:46.350] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:44:46.350] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8591.19      269171     335.68ms   335.23ms   358.62ms   382.79ms   0     
+5000     8459.17      270117     557.46ms   558.13ms   598.55ms   680.22ms   0     
+7000     8227.04      269238     784.78ms   816.11ms   937.13ms   993.99ms   0     
+9000     8034.83      273134     1003.95ms  1026.67ms  1234.76ms  1333.46ms  0     
+================================================================================
+
+Peak Performance:
+  8591.19 RPS at 3000 connections
+  (269,171 requests in 31.33s)
+
+Running: Threads=8, MaxEvents=6144, Queue=4096
+The main program started
+[2025-12-29 20:46:59.400] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:46:59.401] [INFO]  Configuration: port=8080 | workers=8 | max_events=6144 | queue_size=4096 | buff_len=8192
+[2025-12-29 20:46:59.401] [INFO]  Server socket created: fd=3
+[2025-12-29 20:46:59.401] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:46:59.402] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8562.62      269168     336.62ms   336.36ms   353.26ms   390.29ms   0     
+5000     8436.62      270000     558.79ms   559.40ms   623.18ms   655.63ms   0     
+7000     8267.37      273000     778.59ms   775.82ms   920.61ms   983.83ms   0     
+9000     8047.96      271913     1008.29ms  1010.80ms  1120.64ms  1278.94ms  0     
+================================================================================
+
+Peak Performance:
+  8562.62 RPS at 3000 connections
+  (269,168 requests in 31.44s)
+
+Running: Threads=8, MaxEvents=6144, Queue=8192
+The main program started
+[2025-12-29 20:49:11.006] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:49:11.007] [INFO]  Configuration: port=8080 | workers=8 | max_events=6144 | queue_size=8192 | buff_len=8192
+[2025-12-29 20:49:11.008] [INFO]  Server socket created: fd=3
+[2025-12-29 20:49:11.008] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:49:11.008] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8607.68      270000     335.11ms   335.45ms   352.75ms   389.74ms   0     
+5000     8424.54      270527     559.77ms   559.61ms   587.05ms   624.65ms   0     
+7000     8228.13      271264     782.55ms   778.32ms   910.13ms   979.42ms   0     
+9000     8039.96      271326     1005.13ms  1008.74ms  1193.54ms  1289.48ms  0     
+================================================================================
+
+Peak Performance:
+  8607.68 RPS at 3000 connections
+  (270,000 requests in 31.37s)
+
+Running: Threads=8, MaxEvents=6144, Queue=16384
+The main program started
+[2025-12-29 20:51:24.051] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:51:24.052] [INFO]  Configuration: port=8080 | workers=8 | max_events=6144 | queue_size=16384 | buff_len=8192
+[2025-12-29 20:51:24.052] [INFO]  Server socket created: fd=3
+[2025-12-29 20:51:24.052] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:51:24.052] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8678.55      271833     333.43ms   333.03ms   350.58ms   392.41ms   0     
+5000     8556.47      275091     551.56ms   551.88ms   579.19ms   617.93ms   0     
+7000     8156.30      269195     790.40ms   781.46ms   925.04ms   950.94ms   0     
+9000     7945.77      270000     1013.99ms  1015.32ms  1162.22ms  1211.91ms  0     
+================================================================================
+
+Peak Performance:
+  8678.55 RPS at 3000 connections
+  (271,833 requests in 31.32s)
+
+Running: Threads=8, MaxEvents=6144, Queue=32768
+The main program started
+[2025-12-29 20:53:37.602] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:53:37.603] [INFO]  Configuration: port=8080 | workers=8 | max_events=6144 | queue_size=32768 | buff_len=8192
+[2025-12-29 20:53:37.607] [INFO]  Server socket created: fd=3
+[2025-12-29 20:53:37.611] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:53:37.611] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8496.50      266460     339.63ms   338.68ms   362.24ms   405.75ms   0     
+5000     8489.42      271595     556.42ms   556.12ms   582.21ms   624.21ms   0     
+7000     8245.34      272619     782.24ms   779.71ms   919.98ms   943.56ms   0     
+9000     7895.13      268425     1025.91ms  1018.73ms  1219.27ms  1320.77ms  0     
+================================================================================
+
+Peak Performance:
+  8496.50 RPS at 3000 connections
+  (266,460 requests in 31.36s)
+
+Running: Threads=8, MaxEvents=8192, Queue=4096
+The main program started
+[2025-12-29 20:55:49.199] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:55:49.200] [INFO]  Configuration: port=8080 | workers=8 | max_events=8192 | queue_size=4096 | buff_len=8192
+[2025-12-29 20:55:49.200] [INFO]  Server socket created: fd=3
+[2025-12-29 20:55:49.200] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:55:49.200] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8643.21      270287     334.02ms   333.94ms   347.48ms   382.15ms   0     
+5000     8448.37      270836     557.27ms   558.83ms   585.61ms   648.58ms   0     
+7000     8161.76      269201     792.73ms   789.41ms   925.20ms   952.39ms   0     
+9000     7962.13      270000     1010.49ms  1015.03ms  1134.30ms  1203.90ms  0     
+================================================================================
+
+Peak Performance:
+  8643.21 RPS at 3000 connections
+  (270,287 requests in 31.27s)
+
+Running: Threads=8, MaxEvents=8192, Queue=8192
+The main program started
+[2025-12-29 20:58:02.470] [INFO]  === SERVER STARTUP ===
+[2025-12-29 20:58:02.471] [INFO]  Configuration: port=8080 | workers=8 | max_events=8192 | queue_size=8192 | buff_len=8192
+[2025-12-29 20:58:02.471] [INFO]  Server socket created: fd=3
+[2025-12-29 20:58:02.471] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 20:58:02.471] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8690.56      272812     332.00ms   332.90ms   347.32ms   380.56ms   0     
+5000     8383.63      268851     561.94ms   564.28ms   605.89ms   662.58ms   0     
+7000     8217.07      273000     782.82ms   783.95ms   826.29ms   904.98ms   0     
+9000     7925.23      269538     1019.15ms  1016.14ms  1225.88ms  1323.80ms  0     
+================================================================================
+
+Peak Performance:
+  8690.56 RPS at 3000 connections
+  (272,812 requests in 31.39s)
+
+Running: Threads=8, MaxEvents=8192, Queue=16384
+The main program started
+[2025-12-29 21:00:16.124] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:00:16.126] [INFO]  Configuration: port=8080 | workers=8 | max_events=8192 | queue_size=16384 | buff_len=8192
+[2025-12-29 21:00:16.126] [INFO]  Server socket created: fd=3
+[2025-12-29 21:00:16.126] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:00:16.126] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8459.34      264224     341.42ms   336.93ms   387.77ms   428.21ms   0     
+5000     8433.89      272358     558.19ms   558.66ms   591.42ms   660.70ms   0     
+7000     8205.97      269384     788.11ms   782.54ms   927.10ms   970.47ms   0     
+9000     8017.20      271238     1006.22ms  1008.81ms  1076.05ms  1190.87ms  0     
+================================================================================
+
+Peak Performance:
+  8459.34 RPS at 3000 connections
+  (264,224 requests in 31.23s)
+
+Running: Threads=8, MaxEvents=8192, Queue=32768
+The main program started
+[2025-12-29 21:02:27.349] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:02:27.354] [INFO]  Configuration: port=8080 | workers=8 | max_events=8192 | queue_size=32768 | buff_len=8192
+[2025-12-29 21:02:27.354] [INFO]  Server socket created: fd=3
+[2025-12-29 21:02:27.354] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:02:27.354] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8628.60      270008     334.10ms   334.09ms   355.55ms   384.69ms   0     
+5000     8484.75      271185     555.92ms   556.23ms   581.32ms   621.87ms   0     
+7000     8222.85      270843     785.16ms   778.65ms   912.48ms   1000.15ms  0     
+9000     8006.14      270000     1011.38ms  1014.71ms  1197.00ms  1289.69ms  0     
+================================================================================
+
+Peak Performance:
+  8628.60 RPS at 3000 connections
+  (270,008 requests in 31.29s)
+
+Running: Threads=9, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 21:04:40.124] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:04:40.127] [INFO]  Configuration: port=8080 | workers=9 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 21:04:40.127] [INFO]  Server socket created: fd=3
+[2025-12-29 21:04:40.127] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:04:40.127] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8461.95      265438     340.81ms   340.88ms   359.25ms   398.64ms   0     
+5000     8280.80      265084     570.12ms   570.07ms   602.99ms   682.66ms   0     
+7000     8091.43      268471     798.79ms   812.42ms   976.01ms   1067.93ms  0     
+9000     7943.38      270054     1015.38ms  1035.24ms  1200.49ms  1255.41ms  0     
+================================================================================
+
+Peak Performance:
+  8461.95 RPS at 3000 connections
+  (265,438 requests in 31.37s)
+
+Running: Threads=9, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 21:06:53.445] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:06:53.446] [INFO]  Configuration: port=8080 | workers=9 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 21:06:53.446] [INFO]  Server socket created: fd=3
+[2025-12-29 21:06:53.447] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:06:53.447] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8566.19      269543     335.49ms   336.01ms   353.05ms   362.89ms   0     
+5000     8371.50      267526     563.80ms   562.48ms   614.09ms   657.20ms   0     
+7000     8110.30      266000     793.87ms   808.87ms   989.74ms   1080.05ms  0     
+9000     7988.73      272954     1010.04ms  1028.10ms  1217.06ms  1249.94ms  0     
+================================================================================
+
+Peak Performance:
+  8566.19 RPS at 3000 connections
+  (269,543 requests in 31.47s)
+
+Running: Threads=9, MaxEvents=4096, Queue=16384
+The main program started
+[2025-12-29 21:09:04.821] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:09:04.822] [INFO]  Configuration: port=8080 | workers=9 | max_events=4096 | queue_size=16384 | buff_len=8192
+[2025-12-29 21:09:04.823] [INFO]  Server socket created: fd=3
+[2025-12-29 21:09:04.823] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:09:04.823] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8572.78      268629     336.30ms   336.81ms   351.58ms   385.25ms   0     
+5000     8428.63      270000     559.99ms   562.09ms   587.86ms   668.94ms   0     
+7000     8152.45      267492     792.50ms   820.91ms   944.68ms   1003.65ms  0     
+9000     7916.81      269150     1022.61ms  1035.17ms  1283.32ms  1531.00ms  0     
+================================================================================
+
+Peak Performance:
+  8572.78 RPS at 3000 connections
+  (268,629 requests in 31.34s)
+
+Running: Threads=9, MaxEvents=4096, Queue=32768
+The main program started
+[2025-12-29 21:11:17.623] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:11:17.625] [INFO]  Configuration: port=8080 | workers=9 | max_events=4096 | queue_size=32768 | buff_len=8192
+[2025-12-29 21:11:17.626] [INFO]  Server socket created: fd=3
+[2025-12-29 21:11:17.626] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:11:17.626] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8491.08      266162     339.56ms   339.02ms   360.94ms   394.45ms   0     
+5000     8366.24      267758     565.60ms   565.39ms   597.22ms   668.22ms   0     
+7000     8111.37      269372     794.45ms   808.25ms   965.79ms   1014.23ms  0     
+9000     7922.14      266723     1020.62ms  1039.92ms  1196.72ms  1252.85ms  0     
+================================================================================
+
+Peak Performance:
+  8491.08 RPS at 3000 connections
+  (266,162 requests in 31.35s)
+
+Running: Threads=9, MaxEvents=6144, Queue=4096
+The main program started
+[2025-12-29 21:13:30.354] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:13:30.355] [INFO]  Configuration: port=8080 | workers=9 | max_events=6144 | queue_size=4096 | buff_len=8192
+[2025-12-29 21:13:30.355] [INFO]  Server socket created: fd=3
+[2025-12-29 21:13:30.355] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:13:30.355] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8508.98      265654     339.65ms   339.44ms   354.48ms   407.98ms   0     
+5000     8389.11      267709     563.64ms   562.86ms   595.87ms   648.65ms   0     
+7000     8219.85      270096     785.68ms   785.93ms   850.16ms   926.20ms   0     
+9000     7848.07      268537     1029.13ms  1026.55ms  1223.93ms  1291.04ms  0     
+================================================================================
+
+Peak Performance:
+  8508.98 RPS at 3000 connections
+  (265,654 requests in 31.22s)
+
+Running: Threads=9, MaxEvents=6144, Queue=8192
+The main program started
+[2025-12-29 21:15:41.304] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:15:41.305] [INFO]  Configuration: port=8080 | workers=9 | max_events=6144 | queue_size=8192 | buff_len=8192
+[2025-12-29 21:15:41.305] [INFO]  Server socket created: fd=3
+[2025-12-29 21:15:41.305] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:15:41.305] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8559.49      268144     337.97ms   337.90ms   357.63ms   385.33ms   0     
+5000     8395.61      269705     560.77ms   561.27ms   595.67ms   669.65ms   0     
+7000     8172.82      270215     791.08ms   792.32ms   902.34ms   986.60ms   0     
+9000     7853.49      270000     1017.93ms  1024.89ms  1199.85ms  1247.87ms  0     
+================================================================================
+
+Peak Performance:
+  8559.49 RPS at 3000 connections
+  (268,144 requests in 31.33s)
+
+Running: Threads=9, MaxEvents=6144, Queue=16384
+The main program started
+[2025-12-29 21:17:54.701] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:17:54.704] [INFO]  Configuration: port=8080 | workers=9 | max_events=6144 | queue_size=16384 | buff_len=8192
+[2025-12-29 21:17:54.704] [INFO]  Server socket created: fd=3
+[2025-12-29 21:17:54.704] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:17:54.705] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8485.07      266144     339.25ms   339.49ms   357.38ms   378.63ms   0     
+5000     8297.73      265000     568.78ms   571.54ms   616.00ms   665.04ms   0     
+7000     8048.69      264648     801.63ms   799.35ms   908.45ms   1005.78ms  0     
+9000     7909.86      269647     1017.56ms  1022.61ms  1153.21ms  1215.19ms  0     
+================================================================================
+
+Peak Performance:
+  8485.07 RPS at 3000 connections
+  (266,144 requests in 31.37s)
+
+Running: Threads=9, MaxEvents=6144, Queue=32768
+The main program started
+[2025-12-29 21:20:07.603] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:20:07.605] [INFO]  Configuration: port=8080 | workers=9 | max_events=6144 | queue_size=32768 | buff_len=8192
+[2025-12-29 21:20:07.605] [INFO]  Server socket created: fd=3
+[2025-12-29 21:20:07.605] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:20:07.605] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8511.14      266533     339.14ms   340.06ms   354.83ms   374.88ms   0     
+5000     8408.14      269439     562.08ms   562.18ms   596.41ms   675.32ms   0     
+7000     8153.13      269043     790.84ms   788.05ms   854.57ms   940.26ms   0     
+9000     7952.08      270000     1013.69ms  1014.82ms  1167.36ms  1283.13ms  0     
+================================================================================
+
+Peak Performance:
+  8511.14 RPS at 3000 connections
+  (266,533 requests in 31.32s)
+
+Running: Threads=9, MaxEvents=8192, Queue=4096
+The main program started
+[2025-12-29 21:22:18.594] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:22:18.597] [INFO]  Configuration: port=8080 | workers=9 | max_events=8192 | queue_size=4096 | buff_len=8192
+[2025-12-29 21:22:18.599] [INFO]  Server socket created: fd=3
+[2025-12-29 21:22:18.599] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:22:18.599] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8449.70      264874     340.93ms   340.10ms   367.99ms   390.28ms   0     
+5000     8350.18      267007     564.16ms   564.62ms   595.47ms   631.09ms   0     
+7000     8081.05      266856     793.84ms   791.41ms   903.33ms   1046.17ms  0     
+9000     7898.71      269141     1018.70ms  1022.45ms  1149.86ms  1227.49ms  0     
+================================================================================
+
+Peak Performance:
+  8449.70 RPS at 3000 connections
+  (264,874 requests in 31.35s)
+
+Running: Threads=9, MaxEvents=8192, Queue=8192
+The main program started
+[2025-12-29 21:24:31.413] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:24:31.415] [INFO]  Configuration: port=8080 | workers=9 | max_events=8192 | queue_size=8192 | buff_len=8192
+[2025-12-29 21:24:31.415] [INFO]  Server socket created: fd=3
+[2025-12-29 21:24:31.415] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:24:31.415] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8489.04      267502     338.53ms   337.95ms   354.09ms   398.37ms   0     
+5000     8356.81      268361     563.88ms   561.56ms   616.54ms   665.07ms   0     
+7000     8180.51      268304     788.83ms   789.88ms   830.17ms   940.58ms   0     
+9000     7913.34      267028     1023.68ms  1023.56ms  1211.10ms  1303.04ms  0     
+================================================================================
+
+Peak Performance:
+  8489.04 RPS at 3000 connections
+  (267,502 requests in 31.51s)
+
+Running: Threads=9, MaxEvents=8192, Queue=16384
+The main program started
+[2025-12-29 21:26:44.217] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:26:44.222] [INFO]  Configuration: port=8080 | workers=9 | max_events=8192 | queue_size=16384 | buff_len=8192
+[2025-12-29 21:26:44.223] [INFO]  Server socket created: fd=3
+[2025-12-29 21:26:44.225] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:26:44.225] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8485.46      267000     338.61ms   338.51ms   355.08ms   384.19ms   0     
+5000     8363.30      266756     565.23ms   565.83ms   593.64ms   671.46ms   0     
+7000     8088.23      267991     789.48ms   790.60ms   895.57ms   957.04ms   0     
+9000     7943.99      269324     1014.84ms  1019.90ms  1163.34ms  1221.60ms  0     
+================================================================================
+
+Peak Performance:
+  8485.46 RPS at 3000 connections
+  (267,000 requests in 31.47s)
+
+Running: Threads=9, MaxEvents=8192, Queue=32768
+The main program started
+[2025-12-29 21:28:55.459] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:28:55.460] [INFO]  Configuration: port=8080 | workers=9 | max_events=8192 | queue_size=32768 | buff_len=8192
+[2025-12-29 21:28:55.461] [INFO]  Server socket created: fd=3
+[2025-12-29 21:28:55.463] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:28:55.464] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8464.45      265785     340.78ms   339.90ms   365.14ms   393.25ms   0     
+5000     8247.05      265000     570.28ms   567.95ms   627.40ms   698.77ms   0     
+7000     8167.85      267810     790.73ms   792.22ms   854.92ms   948.21ms   0     
+9000     7874.97      267482     1028.17ms  1016.76ms  1215.46ms  1247.07ms  0     
+================================================================================
+
+Peak Performance:
+  8464.45 RPS at 3000 connections
+  (265,785 requests in 31.40s)
+
+Running: Threads=10, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 21:31:08.244] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:31:08.246] [INFO]  Configuration: port=8080 | workers=10 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 21:31:08.249] [INFO]  Server socket created: fd=3
+[2025-12-29 21:31:08.249] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:31:08.289] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8476.32      265479     340.56ms   341.12ms   353.54ms   371.78ms   0     
+5000     8320.53      266438     565.68ms   565.64ms   596.83ms   635.23ms   0     
+7000     8039.26      262843     804.75ms   819.98ms   995.49ms   1036.92ms  0     
+9000     7909.20      270000     1020.35ms  1044.41ms  1221.50ms  1305.11ms  0     
+================================================================================
+
+Peak Performance:
+  8476.32 RPS at 3000 connections
+  (265,479 requests in 31.32s)
+
+Running: Threads=10, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 21:33:20.961] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:33:20.961] [INFO]  Configuration: port=8080 | workers=10 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 21:33:20.961] [INFO]  Server socket created: fd=3
+[2025-12-29 21:33:20.962] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:33:20.962] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8448.19      264000     341.60ms   341.54ms   360.94ms   395.40ms   0     
+5000     8294.60      265640     567.85ms   568.96ms   599.89ms   675.44ms   0     
+7000     8093.92      266000     794.66ms   819.26ms   977.00ms   1016.65ms  0     
+9000     7846.48      266937     1026.78ms  1049.54ms  1230.89ms  1286.47ms  0     
+================================================================================
+
+Peak Performance:
+  8448.19 RPS at 3000 connections
+  (264,000 requests in 31.25s)
+
+Running: Threads=10, MaxEvents=4096, Queue=16384
+The main program started
+[2025-12-29 21:35:31.573] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:35:31.573] [INFO]  Configuration: port=8080 | workers=10 | max_events=4096 | queue_size=16384 | buff_len=8192
+[2025-12-29 21:35:31.574] [INFO]  Server socket created: fd=3
+[2025-12-29 21:35:31.574] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:35:31.574] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8487.51      266262     339.89ms   339.63ms   359.48ms   403.99ms   0     
+5000     8267.19      265145     570.36ms   569.01ms   606.56ms   631.50ms   0     
+7000     8103.58      266000     794.16ms   813.54ms   945.34ms   982.84ms   0     
+9000     7854.37      263091     1031.24ms  1048.06ms  1234.83ms  1278.11ms  0     
+================================================================================
+
+Peak Performance:
+  8487.51 RPS at 3000 connections
+  (266,262 requests in 31.37s)
+
+Running: Threads=10, MaxEvents=4096, Queue=32768
+The main program started
+[2025-12-29 21:37:43.578] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:37:43.583] [INFO]  Configuration: port=8080 | workers=10 | max_events=4096 | queue_size=32768 | buff_len=8192
+[2025-12-29 21:37:43.583] [INFO]  Server socket created: fd=3
+[2025-12-29 21:37:43.583] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:37:43.583] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8393.73      262726     344.05ms   342.05ms   372.08ms   394.07ms   0     
+5000     8289.82      265281     570.25ms   570.27ms   594.99ms   670.53ms   0     
+7000     8133.64      266000     793.94ms   806.87ms   944.11ms   1017.80ms  0     
+9000     7794.35      265510     1029.72ms  1058.21ms  1273.73ms  1342.44ms  0     
+================================================================================
+
+Peak Performance:
+  8393.73 RPS at 3000 connections
+  (262,726 requests in 31.30s)
+
+Running: Threads=10, MaxEvents=6144, Queue=4096
+The main program started
+[2025-12-29 21:39:56.132] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:39:56.134] [INFO]  Configuration: port=8080 | workers=10 | max_events=6144 | queue_size=4096 | buff_len=8192
+[2025-12-29 21:39:56.134] [INFO]  Server socket created: fd=3
+[2025-12-29 21:39:56.134] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:39:56.134] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8484.13      265538     340.50ms   340.69ms   357.37ms   380.89ms   0     
+5000     8287.52      265910     568.13ms   568.34ms   591.36ms   673.25ms   0     
+7000     8116.16      267477     796.33ms   799.22ms   854.93ms   939.94ms   0     
+9000     7700.94      261000     1046.88ms  1035.87ms  1216.99ms  1695.78ms  0     
+================================================================================
+
+Peak Performance:
+  8484.13 RPS at 3000 connections
+  (265,538 requests in 31.30s)
+
+Running: Threads=10, MaxEvents=6144, Queue=8192
+The main program started
+[2025-12-29 21:42:06.853] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:42:06.854] [INFO]  Configuration: port=8080 | workers=10 | max_events=6144 | queue_size=8192 | buff_len=8192
+[2025-12-29 21:42:06.854] [INFO]  Server socket created: fd=3
+[2025-12-29 21:42:06.854] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:42:06.854] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8455.85      265217     341.01ms   341.41ms   354.62ms   403.64ms   0     
+5000     8220.36      265000     570.98ms   570.19ms   635.05ms   674.72ms   0     
+7000     8024.96      264536     804.48ms   802.22ms   915.40ms   942.96ms   0     
+9000     7850.48      267411     1029.65ms  1032.75ms  1225.29ms  1284.59ms  0     
+================================================================================
+
+Peak Performance:
+  8455.85 RPS at 3000 connections
+  (265,217 requests in 31.36s)
+
+Running: Threads=10, MaxEvents=6144, Queue=16384
+The main program started
+[2025-12-29 21:44:19.726] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:44:19.728] [INFO]  Configuration: port=8080 | workers=10 | max_events=6144 | queue_size=16384 | buff_len=8192
+[2025-12-29 21:44:19.728] [INFO]  Server socket created: fd=3
+[2025-12-29 21:44:19.728] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:44:19.728] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8494.38      265917     339.74ms   339.24ms   357.36ms   391.38ms   0     
+5000     8223.69      262492     574.50ms   571.17ms   649.69ms   707.47ms   0     
+7000     8149.47      268851     792.93ms   794.23ms   894.26ms   1001.00ms  0     
+9000     7899.69      267142     1022.56ms  1027.82ms  1206.61ms  1268.60ms  0     
+================================================================================
+
+Peak Performance:
+  8494.38 RPS at 3000 connections
+  (265,917 requests in 31.31s)
+
+Running: Threads=10, MaxEvents=6144, Queue=32768
+The main program started
+[2025-12-29 21:46:31.944] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:46:31.945] [INFO]  Configuration: port=8080 | workers=10 | max_events=6144 | queue_size=32768 | buff_len=8192
+[2025-12-29 21:46:31.945] [INFO]  Server socket created: fd=3
+[2025-12-29 21:46:31.945] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:46:31.945] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8559.51      267748     337.56ms   337.42ms   353.44ms   392.12ms   0     
+5000     8340.57      266924     565.92ms   566.25ms   593.17ms   683.26ms   0     
+7000     7995.42      264245     800.80ms   799.95ms   932.61ms   983.65ms   0     
+9000     7898.16      266773     1022.50ms  1028.70ms  1172.37ms  1218.02ms  0     
+================================================================================
+
+Peak Performance:
+  8559.51 RPS at 3000 connections
+  (267,748 requests in 31.28s)
+
+Running: Threads=10, MaxEvents=8192, Queue=4096
+The main program started
+[2025-12-29 21:48:42.393] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:48:42.397] [INFO]  Configuration: port=8080 | workers=10 | max_events=8192 | queue_size=4096 | buff_len=8192
+[2025-12-29 21:48:42.398] [INFO]  Server socket created: fd=3
+[2025-12-29 21:48:42.398] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:48:42.398] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8469.36      265827     340.43ms   340.38ms   356.13ms   405.93ms   0     
+5000     8207.89      262658     575.79ms   571.70ms   639.19ms   713.15ms   0     
+7000     8040.93      264503     802.10ms   800.84ms   900.25ms   970.80ms   0     
+9000     7805.82      265685     1030.73ms  1030.39ms  1132.90ms  1227.16ms  0     
+================================================================================
+
+Peak Performance:
+  8469.36 RPS at 3000 connections
+  (265,827 requests in 31.39s)
+
+Running: Threads=10, MaxEvents=8192, Queue=8192
+The main program started
+[2025-12-29 21:50:54.863] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:50:54.865] [INFO]  Configuration: port=8080 | workers=10 | max_events=8192 | queue_size=8192 | buff_len=8192
+[2025-12-29 21:50:54.865] [INFO]  Server socket created: fd=3
+[2025-12-29 21:50:54.865] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:50:54.865] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8462.84      266218     340.31ms   340.79ms   355.32ms   385.63ms   0     
+5000     8255.10      263908     571.87ms   567.88ms   660.57ms   688.81ms   0     
+7000     8091.26      266000     796.12ms   799.92ms   917.10ms   943.99ms   0     
+9000     7649.65      261000     1046.40ms  1037.89ms  1237.44ms  1354.78ms  0     
+================================================================================
+
+Peak Performance:
+  8462.84 RPS at 3000 connections
+  (266,218 requests in 31.46s)
+
+Running: Threads=10, MaxEvents=8192, Queue=16384
+The main program started
+[2025-12-29 21:53:07.513] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:53:07.515] [INFO]  Configuration: port=8080 | workers=10 | max_events=8192 | queue_size=16384 | buff_len=8192
+[2025-12-29 21:53:07.515] [INFO]  Server socket created: fd=3
+[2025-12-29 21:53:07.515] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:53:07.515] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8445.58      264000     341.59ms   342.19ms   361.25ms   385.44ms   0     
+5000     8257.00      266097     570.76ms   570.96ms   596.11ms   669.29ms   0     
+7000     7968.59      262849     808.72ms   802.59ms   929.70ms   1001.01ms  0     
+9000     7800.60      266014     1034.57ms  1036.44ms  1220.72ms  1262.57ms  0     
+================================================================================
+
+Peak Performance:
+  8445.58 RPS at 3000 connections
+  (264,000 requests in 31.26s)
+
+Running: Threads=10, MaxEvents=8192, Queue=32768
+The main program started
+[2025-12-29 21:55:18.313] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:55:18.317] [INFO]  Configuration: port=8080 | workers=10 | max_events=8192 | queue_size=32768 | buff_len=8192
+[2025-12-29 21:55:18.317] [INFO]  Server socket created: fd=3
+[2025-12-29 21:55:18.318] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:55:18.318] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8359.31      261656     345.06ms   342.10ms   385.71ms   406.31ms   0     
+5000     8260.32      266113     570.42ms   570.28ms   597.11ms   667.55ms   0     
+7000     8039.86      264990     803.41ms   798.88ms   930.28ms   961.36ms   0     
+9000     7848.73      264149     1028.34ms  1030.69ms  1201.74ms  1244.39ms  0     
+================================================================================
+
+Peak Performance:
+  8359.31 RPS at 3000 connections
+  (261,656 requests in 31.30s)
+
+Running: Threads=11, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 21:57:30.524] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:57:30.528] [INFO]  Configuration: port=8080 | workers=11 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 21:57:30.528] [INFO]  Server socket created: fd=3
+[2025-12-29 21:57:30.528] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:57:30.528] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8427.12      265056     341.55ms   340.74ms   360.22ms   392.75ms   0     
+5000     8274.32      265196     568.96ms   567.14ms   623.12ms   680.82ms   0     
+7000     8023.23      263932     803.30ms   817.28ms   979.23ms   1044.03ms  0     
+9000     8126.57      273956     993.95ms   1028.40ms  1168.37ms  1257.77ms  0     
+================================================================================
+
+Peak Performance:
+  8427.12 RPS at 3000 connections
+  (265,056 requests in 31.45s)
+
+Running: Threads=11, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 21:59:43.126] [INFO]  === SERVER STARTUP ===
+[2025-12-29 21:59:43.131] [INFO]  Configuration: port=8080 | workers=11 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 21:59:43.131] [INFO]  Server socket created: fd=3
+[2025-12-29 21:59:43.131] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 21:59:43.131] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8585.62      269650     335.62ms   335.22ms   353.30ms   385.03ms   0     
+5000     8757.32      280528     539.26ms   542.14ms   576.26ms   644.21ms   0     
+7000     8440.03      276699     767.90ms   789.73ms   920.31ms   958.23ms   0     
+9000     8214.53      276053     987.92ms   1009.08ms  1234.11ms  1315.53ms  0     
+================================================================================
+
+Peak Performance:
+  8757.32 RPS at 5000 connections
+  (280,528 requests in 32.03s)
+
+Running: Threads=11, MaxEvents=4096, Queue=16384
+The main program started
+[2025-12-29 22:01:58.886] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:01:58.888] [INFO]  Configuration: port=8080 | workers=11 | max_events=4096 | queue_size=16384 | buff_len=8192
+[2025-12-29 22:01:58.888] [INFO]  Server socket created: fd=3
+[2025-12-29 22:01:58.888] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:01:58.888] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8874.79      279000     324.22ms   324.84ms   348.86ms   373.59ms   0     
+5000     8673.09      277077     544.49ms   548.73ms   591.78ms   759.11ms   0     
+7000     8547.90      280000     759.31ms   779.51ms   934.59ms   1020.79ms  0     
+9000     8236.05      280673     979.85ms   990.54ms   1159.18ms  1257.94ms  0     
+================================================================================
+
+Peak Performance:
+  8874.79 RPS at 3000 connections
+  (279,000 requests in 31.44s)
+
+Running: Threads=11, MaxEvents=4096, Queue=32768
+The main program started
+[2025-12-29 22:04:16.486] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:04:16.488] [INFO]  Configuration: port=8080 | workers=11 | max_events=4096 | queue_size=32768 | buff_len=8192
+[2025-12-29 22:04:16.488] [INFO]  Server socket created: fd=3
+[2025-12-29 22:04:16.488] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:04:16.488] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8864.90      278603     324.81ms   325.93ms   347.43ms   364.26ms   0     
+5000     8670.34      277615     545.38ms   549.48ms   608.95ms   678.10ms   0     
+7000     8427.01      276163     766.34ms   779.85ms   933.34ms   1025.76ms  0     
+9000     8160.83      278232     986.36ms   999.50ms   1217.74ms  1253.23ms  0     
+================================================================================
+
+Peak Performance:
+  8864.90 RPS at 3000 connections
+  (278,603 requests in 31.43s)
+
+Running: Threads=11, MaxEvents=6144, Queue=4096
+The main program started
+[2025-12-29 22:06:34.154] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:06:34.155] [INFO]  Configuration: port=8080 | workers=11 | max_events=6144 | queue_size=4096 | buff_len=8192
+[2025-12-29 22:06:34.155] [INFO]  Server socket created: fd=3
+[2025-12-29 22:06:34.155] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:06:34.155] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8840.05      276918     326.34ms   327.28ms   350.47ms   365.57ms   0     
+5000     8666.13      276889     546.55ms   554.00ms   584.27ms   672.14ms   0     
+7000     8328.96      272107     777.60ms   791.27ms   849.28ms   958.99ms   0     
+9000     8209.95      278518     982.24ms   990.08ms   1126.43ms  1228.19ms  0     
+================================================================================
+
+Peak Performance:
+  8840.05 RPS at 3000 connections
+  (276,918 requests in 31.33s)
+
+Running: Threads=11, MaxEvents=6144, Queue=8192
+The main program started
+[2025-12-29 22:08:50.664] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:08:50.667] [INFO]  Configuration: port=8080 | workers=11 | max_events=6144 | queue_size=8192 | buff_len=8192
+[2025-12-29 22:08:50.667] [INFO]  Server socket created: fd=3
+[2025-12-29 22:08:50.667] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:08:50.667] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8808.06      276601     327.17ms   330.70ms   352.89ms   370.28ms   0     
+5000     8735.64      280000     541.78ms   552.04ms   573.67ms   584.62ms   0     
+7000     8472.25      277513     764.42ms   775.47ms   844.84ms   869.57ms   0     
+9000     8189.36      278317     986.04ms   998.09ms   1164.63ms  1224.17ms  0     
+================================================================================
+
+Peak Performance:
+  8808.06 RPS at 3000 connections
+  (276,601 requests in 31.40s)
+
+Running: Threads=11, MaxEvents=6144, Queue=16384
+The main program started
+[2025-12-29 22:11:07.933] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:11:07.935] [INFO]  Configuration: port=8080 | workers=11 | max_events=6144 | queue_size=16384 | buff_len=8192
+[2025-12-29 22:11:07.935] [INFO]  Server socket created: fd=3
+[2025-12-29 22:11:07.935] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:11:07.935] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8815.49      275575     327.80ms   326.33ms   353.51ms   378.08ms   0     
+5000     8736.85      277945     542.37ms   541.99ms   578.34ms   609.97ms   0     
+7000     8416.22      276744     768.48ms   758.42ms   874.21ms   928.17ms   0     
+9000     8237.67      279773     980.71ms   984.36ms   1133.31ms  1188.53ms  0     
+================================================================================
+
+Peak Performance:
+  8815.49 RPS at 3000 connections
+  (275,575 requests in 31.26s)
+
+Running: Threads=11, MaxEvents=6144, Queue=32768
+The main program started
+[2025-12-29 22:13:24.933] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:13:24.933] [INFO]  Configuration: port=8080 | workers=11 | max_events=6144 | queue_size=32768 | buff_len=8192
+[2025-12-29 22:13:24.933] [INFO]  Server socket created: fd=3
+[2025-12-29 22:13:24.933] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:13:24.933] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8838.44      276233     326.92ms   325.88ms   346.58ms   379.82ms   0     
+5000     8694.91      278118     543.47ms   543.14ms   587.42ms   644.32ms   0     
+7000     8533.05      280000     759.02ms   764.05ms   813.49ms   872.19ms   0     
+9000     8254.95      279000     974.39ms   982.83ms   1137.68ms  1186.66ms  0     
+================================================================================
+
+Peak Performance:
+  8838.44 RPS at 3000 connections
+  (276,233 requests in 31.25s)
+
+Running: Threads=11, MaxEvents=8192, Queue=4096
+The main program started
+[2025-12-29 22:15:41.745] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:15:41.746] [INFO]  Configuration: port=8080 | workers=11 | max_events=8192 | queue_size=4096 | buff_len=8192
+[2025-12-29 22:15:41.746] [INFO]  Server socket created: fd=3
+[2025-12-29 22:15:41.746] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:15:41.746] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     9013.17      281193     321.14ms   321.69ms   335.70ms   357.66ms   0     
+5000     8928.75      282858     532.93ms   534.07ms   560.36ms   641.69ms   0     
+7000     8718.12      287000     740.96ms   752.64ms   795.63ms   874.56ms   0     
+9000     8406.95      283654     967.98ms   975.29ms   1136.46ms  1193.01ms  0     
+================================================================================
+
+Peak Performance:
+  9013.17 RPS at 3000 connections
+  (281,193 requests in 31.20s)
+
+Running: Threads=11, MaxEvents=8192, Queue=8192
+The main program started
+[2025-12-29 22:18:00.781] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:18:00.781] [INFO]  Configuration: port=8080 | workers=11 | max_events=8192 | queue_size=8192 | buff_len=8192
+[2025-12-29 22:18:00.781] [INFO]  Server socket created: fd=3
+[2025-12-29 22:18:00.781] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:18:00.781] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8999.89      281256     321.81ms   324.85ms   345.51ms   381.79ms   0     
+5000     8954.47      285154     528.17ms   529.93ms   557.29ms   617.92ms   0     
+7000     8597.87      280934     751.10ms   748.76ms   878.75ms   950.03ms   0     
+9000     8479.17      285920     962.62ms   962.04ms   1130.50ms  1196.03ms  0     
+================================================================================
+
+Peak Performance:
+  8999.89 RPS at 3000 connections
+  (281,256 requests in 31.25s)
+
+Running: Threads=11, MaxEvents=8192, Queue=16384
+The main program started
+[2025-12-29 22:20:19.747] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:20:19.748] [INFO]  Configuration: port=8080 | workers=11 | max_events=8192 | queue_size=16384 | buff_len=8192
+[2025-12-29 22:20:19.748] [INFO]  Server socket created: fd=3
+[2025-12-29 22:20:19.749] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:20:19.749] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     9034.06      282813     319.61ms   319.33ms   335.00ms   364.83ms   0     
+5000     8377.92      266706     566.26ms   578.32ms   617.51ms   674.15ms   0     
+7000     7970.89      263480     811.12ms   813.19ms   891.17ms   951.24ms   0     
+9000     7684.80      261000     1049.55ms  1056.27ms  1189.72ms  1247.46ms  0     
+================================================================================
+
+Peak Performance:
+  9034.06 RPS at 3000 connections
+  (282,813 requests in 31.31s)
+
+Running: Threads=11, MaxEvents=8192, Queue=32768
+The main program started
+[2025-12-29 22:22:39.273] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:22:39.275] [INFO]  Configuration: port=8080 | workers=11 | max_events=8192 | queue_size=32768 | buff_len=8192
+[2025-12-29 22:22:39.275] [INFO]  Server socket created: fd=3
+[2025-12-29 22:22:39.275] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:22:39.275] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8292.32      261000     346.81ms   346.77ms   368.31ms   388.97ms   0     
+5000     8075.61      258021     586.16ms   581.38ms   670.70ms   713.52ms   0     
+7000     7953.27      260214     813.97ms   815.36ms   860.38ms   1007.95ms  0     
+9000     7726.36      262205     1045.03ms  1051.81ms  1117.86ms  1234.40ms  0     
+================================================================================
+
+Peak Performance:
+  8292.32 RPS at 3000 connections
+  (261,000 requests in 31.47s)
+
+Running: Threads=12, MaxEvents=4096, Queue=4096
+The main program started
+[2025-12-29 22:24:58.671] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:24:58.671] [INFO]  Configuration: port=8080 | workers=12 | max_events=4096 | queue_size=4096 | buff_len=8192
+[2025-12-29 22:24:58.671] [INFO]  Server socket created: fd=3
+[2025-12-29 22:24:58.672] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:24:58.680] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8210.91      257459     351.37ms   349.78ms   381.67ms   407.29ms   0     
+5000     8135.57      260838     580.13ms   580.44ms   627.01ms   662.60ms   0     
+7000     7912.37      259000     816.30ms   834.13ms   980.79ms   1005.09ms  0     
+9000     7740.81      263408     1045.12ms  1073.10ms  1246.51ms  1297.43ms  0     
+================================================================================
+
+Peak Performance:
+  8210.91 RPS at 3000 connections
+  (257,459 requests in 31.36s)
+
+Running: Threads=12, MaxEvents=4096, Queue=8192
+The main program started
+[2025-12-29 22:27:18.094] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:27:18.096] [INFO]  Configuration: port=8080 | workers=12 | max_events=4096 | queue_size=8192 | buff_len=8192
+[2025-12-29 22:27:18.097] [INFO]  Server socket created: fd=3
+[2025-12-29 22:27:18.097] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:27:18.097] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8297.67      259845     348.27ms   347.18ms   371.61ms   408.04ms   0     
+5000     8106.08      260000     581.41ms   580.08ms   623.81ms   708.58ms   0     
+7000     8033.30      264080     806.37ms   822.78ms   956.71ms   1014.27ms  0     
+9000     7751.10      261000     1043.05ms  1062.64ms  1275.12ms  1363.28ms  0     
+================================================================================
+
+Peak Performance:
+  8297.67 RPS at 3000 connections
+  (259,845 requests in 31.32s)
+
+Running: Threads=12, MaxEvents=4096, Queue=16384
+The main program started
+[2025-12-29 22:29:37.287] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:29:37.289] [INFO]  Configuration: port=8080 | workers=12 | max_events=4096 | queue_size=16384 | buff_len=8192
+[2025-12-29 22:29:37.290] [INFO]  Server socket created: fd=3
+[2025-12-29 22:29:37.290] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:29:37.290] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8280.04      259336     349.01ms   348.00ms   365.02ms   416.83ms   0     
+5000     8081.15      260174     583.13ms   580.97ms   626.79ms   687.68ms   0     
+7000     7987.96      263093     810.74ms   825.56ms   973.02ms   1004.25ms  0     
+9000     7798.88      265437     1038.84ms  1063.68ms  1273.16ms  1302.54ms  0     
+================================================================================
+
+Peak Performance:
+  8280.04 RPS at 3000 connections
+  (259,336 requests in 31.32s)
+
+Running: Threads=12, MaxEvents=4096, Queue=32768
+The main program started
+[2025-12-29 22:31:57.104] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:31:57.107] [INFO]  Configuration: port=8080 | workers=12 | max_events=4096 | queue_size=32768 | buff_len=8192
+[2025-12-29 22:31:57.107] [INFO]  Server socket created: fd=3
+[2025-12-29 22:31:57.107] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:31:57.107] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8229.89      258000     349.62ms   349.34ms   370.81ms   410.99ms   0     
+5000     8189.50      262695     576.15ms   578.79ms   604.50ms   653.15ms   0     
+7000     7829.02      259288     826.72ms   841.24ms   996.98ms   1072.69ms  0     
+9000     7778.48      261483     1037.95ms  1073.21ms  1210.97ms  1277.10ms  0     
+================================================================================
+
+Peak Performance:
+  8229.89 RPS at 3000 connections
+  (258,000 requests in 31.35s)
+
+Running: Threads=12, MaxEvents=6144, Queue=4096
+The main program started
+[2025-12-29 22:34:16.539] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:34:16.540] [INFO]  Configuration: port=8080 | workers=12 | max_events=6144 | queue_size=4096 | buff_len=8192
+[2025-12-29 22:34:16.540] [INFO]  Server socket created: fd=3
+[2025-12-29 22:34:16.540] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:34:16.541] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8216.42      258505     349.73ms   348.94ms   367.19ms   392.70ms   0     
+5000     8216.96      264518     574.21ms   577.36ms   602.92ms   677.31ms   0     
+7000     7896.46      260012     817.69ms   815.58ms   894.02ms   979.67ms   0     
+9000     7753.65      263535     1041.41ms  1046.81ms  1152.59ms  1242.24ms  0     
+================================================================================
+
+Peak Performance:
+  8216.96 RPS at 5000 connections
+  (264,518 requests in 32.19s)
+
+Running: Threads=12, MaxEvents=6144, Queue=8192
+The main program started
+[2025-12-29 22:36:36.419] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:36:36.421] [INFO]  Configuration: port=8080 | workers=12 | max_events=6144 | queue_size=8192 | buff_len=8192
+[2025-12-29 22:36:36.421] [INFO]  Server socket created: fd=3
+[2025-12-29 22:36:36.421] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:36:36.421] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8304.69      259718     347.56ms   347.27ms   365.81ms   410.69ms   0     
+5000     8202.76      262413     577.51ms   577.86ms   602.49ms   737.09ms   0     
+7000     7934.47      260869     816.80ms   814.77ms   885.96ms   952.76ms   0     
+9000     7701.71      260493     1053.90ms  1049.16ms  1236.34ms  1367.79ms  0     
+================================================================================
+
+Peak Performance:
+  8304.69 RPS at 3000 connections
+  (259,718 requests in 31.27s)
+
+Running: Threads=12, MaxEvents=6144, Queue=16384
+The main program started
+[2025-12-29 22:38:55.702] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:38:55.704] [INFO]  Configuration: port=8080 | workers=12 | max_events=6144 | queue_size=16384 | buff_len=8192
+[2025-12-29 22:38:55.704] [INFO]  Server socket created: fd=3
+[2025-12-29 22:38:55.704] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:38:55.704] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8312.57      260028     347.25ms   347.70ms   369.17ms   396.28ms   0     
+5000     8161.64      260801     577.57ms   577.87ms   597.90ms   646.25ms   0     
+7000     8007.66      262832     808.93ms   809.66ms   920.08ms   963.62ms   0     
+9000     7669.50      260756     1058.74ms  1054.64ms  1232.39ms  1295.87ms  0     
+================================================================================
+
+Peak Performance:
+  8312.57 RPS at 3000 connections
+  (260,028 requests in 31.28s)
+
+Running: Threads=12, MaxEvents=6144, Queue=32768
+The main program started
+[2025-12-29 22:41:15.053] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:41:15.059] [INFO]  Configuration: port=8080 | workers=12 | max_events=6144 | queue_size=32768 | buff_len=8192
+[2025-12-29 22:41:15.059] [INFO]  Server socket created: fd=3
+[2025-12-29 22:41:15.059] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:41:15.059] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8310.04      259996     348.27ms   347.96ms   368.31ms   396.49ms   0     
+5000     8135.65      260995     580.35ms   580.88ms   608.39ms   673.61ms   0     
+7000     7859.54      259000     821.55ms   818.73ms   970.22ms   1016.42ms  0     
+9000     7757.58      261599     1042.57ms  1043.11ms  1125.44ms  1306.07ms  0     
+================================================================================
+
+Peak Performance:
+  8310.04 RPS at 3000 connections
+  (259,996 requests in 31.29s)
+
+Running: Threads=12, MaxEvents=8192, Queue=4096
+The main program started
+[2025-12-29 22:43:34.345] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:43:34.346] [INFO]  Configuration: port=8080 | workers=12 | max_events=8192 | queue_size=4096 | buff_len=8192
+[2025-12-29 22:43:34.346] [INFO]  Server socket created: fd=3
+[2025-12-29 22:43:34.346] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:43:34.346] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8298.67      259361     347.89ms   347.90ms   362.38ms   399.75ms   0     
+5000     8097.40      259218     582.71ms   581.77ms   649.95ms   714.81ms   0     
+7000     7997.44      263369     806.95ms   810.16ms   844.67ms   949.43ms   0     
+9000     7644.58      259788     1055.48ms  1055.49ms  1218.96ms  1481.44ms  0     
+================================================================================
+
+Peak Performance:
+  8298.67 RPS at 3000 connections
+  (259,361 requests in 31.25s)
+
+Running: Threads=12, MaxEvents=8192, Queue=8192
+The main program started
+[2025-12-29 22:45:53.821] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:45:53.823] [INFO]  Configuration: port=8080 | workers=12 | max_events=8192 | queue_size=8192 | buff_len=8192
+[2025-12-29 22:45:53.824] [INFO]  Server socket created: fd=3
+[2025-12-29 22:45:53.824] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:45:53.824] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8269.18      259542     348.73ms   348.95ms   366.69ms   395.22ms   0     
+5000     8129.79      260368     580.29ms   580.71ms   607.64ms   678.57ms   0     
+7000     7921.84      262110     808.90ms   810.50ms   870.21ms   994.39ms   0     
+9000     7661.16      260172     1052.73ms  1052.34ms  1224.85ms  1278.98ms  0     
+================================================================================
+
+Peak Performance:
+  8269.18 RPS at 3000 connections
+  (259,542 requests in 31.39s)
+
+Running: Threads=12, MaxEvents=8192, Queue=16384
+The main program started
+[2025-12-29 22:48:13.562] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:48:13.563] [INFO]  Configuration: port=8080 | workers=12 | max_events=8192 | queue_size=16384 | buff_len=8192
+[2025-12-29 22:48:13.563] [INFO]  Server socket created: fd=3
+[2025-12-29 22:48:13.563] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:48:13.564] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8238.86      258835     349.36ms   348.79ms   363.49ms   402.44ms   0     
+5000     8096.02      260952     582.50ms   579.83ms   619.54ms   738.87ms   0     
+7000     7974.87      260796     810.64ms   810.80ms   952.40ms   1044.10ms  0     
+9000     7711.33      261000     1046.14ms  1052.28ms  1218.62ms  1257.60ms  0     
+================================================================================
+
+Peak Performance:
+  8238.86 RPS at 3000 connections
+  (258,835 requests in 31.42s)
+
+Running: Threads=12, MaxEvents=8192, Queue=32768
+The main program started
+[2025-12-29 22:50:33.059] [INFO]  === SERVER STARTUP ===
+[2025-12-29 22:50:33.062] [INFO]  Configuration: port=8080 | workers=12 | max_events=8192 | queue_size=32768 | buff_len=8192
+[2025-12-29 22:50:33.062] [INFO]  Server socket created: fd=3
+[2025-12-29 22:50:33.062] [INFO]  eventfd created: notify_fd=4
+[2025-12-29 22:50:33.062] [INFO]  epoll instance created: epoll_fd=5
+Starting server
+
+================================================================================
+Load Test Configuration:
+  Target: localhost:8080 (TCP)
+  Test duration per phase: 30 seconds
+  Connection levels: [3000, 5000, 7000, 9000]
+  Message: 'PING\n'
+  Strategy: Each connection sends as many requests as possible
+================================================================================
+
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+   Cooling down for 2 seconds...
+
+================================================================================
+LOAD TEST SUMMARY
+================================================================================
+Conns    RPS          Reqs       Avg        P50        P95        P99        Err   
+--------------------------------------------------------------------------------
+3000     8298.73      261000     346.71ms   346.58ms   363.76ms   408.55ms   0     
+5000     8069.79      258678     583.60ms   579.92ms   654.70ms   716.42ms   0     
+7000     7969.75      262129     812.70ms   813.82ms   864.61ms   1023.33ms  0     
+9000     7768.19      262554     1038.71ms  1046.25ms  1211.80ms  1236.82ms  0     
+================================================================================
+
+Peak Performance:
+  8298.73 RPS at 3000 connections
+  (261,000 requests in 31.45s)
+

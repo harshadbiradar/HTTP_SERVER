@@ -2,7 +2,8 @@
 
 void Connection_manager::accept_all(int sock_fd,int epoll_fd,struct epoll_event &event,
                 std::unordered_map<int, std::shared_ptr<Connection>> &Live_connections)
-{
+{   
+    
     int client_fd;
     sockaddr_in serverAddress;
     socklen_t len_sock=sizeof(serverAddress);
@@ -23,6 +24,11 @@ void Connection_manager::accept_all(int sock_fd,int epoll_fd,struct epoll_event 
                 // also handle epoll_close,server_fd close
             }
         }
+        int one = 1;
+        if (setsockopt(client_fd, IPPROTO_TCP, TCP_NODELAY, &one, sizeof(one)) < 0) {
+            // Log error but don't necessarily abort
+            // LOG_ERROR("Failed to set TCP_NODELAY on fd " << client_fd);
+        }
         event.events = EPOLLIN|EPOLLET;
         event.data.fd = client_fd;
         int flags = fcntl(client_fd, F_GETFL, 0);
@@ -40,7 +46,7 @@ void Connection_manager::accept_all(int sock_fd,int epoll_fd,struct epoll_event 
 
 
 void Connection_manager::close_connection(int fd,int epoll_fd,std::unordered_map<int,std::shared_ptr<Connection>>&live_connections){
-    //LOG_DEBUG("Closing connection: fd=" << fd << " | Remaining live: " << live_connections.size() - 1);
+    // LOG_DEBUG("Closing connection: fd=" << fd << " | Remaining live: " << live_connections.size() - 1);
     int retcode = epoll_ctl(epoll_fd, EPOLL_CTL_DEL, fd, nullptr);
     if (retcode == -1)
     {

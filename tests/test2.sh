@@ -16,7 +16,7 @@ for t in $THREAD_RANGE; do
                 echo "Running: Threads=$t, MaxEvents=$e, Queue=$q"
 
                 # Run the combined executable in background
-                ../build/concurrent_server --threads $t --events $e --queue $q &
+                ../build/con_serv_mul_que --threads $t --events $e --queue $q &
                 CPP_PID=$!
 
                 # Run Python test (passing the same params so Python knows what it's testing)
