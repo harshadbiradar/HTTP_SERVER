@@ -1,5 +1,4 @@
 #include"../include/Server.h"
-#include<csignal>
 
 int main(int argc,char* argv[]){
     signal(SIGPIPE, SIG_IGN);

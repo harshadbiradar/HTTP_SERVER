@@ -160,10 +160,20 @@ void Server::start(){
     //     std::cerr << "[ERROR]: Error listening on server_socket." << std::endl;
     //     terminate();//to not terminate, wait for few sec..
     // }
-    do{
-        //staying here till we get any connection, and not abruptly terminating.
-        listen_val = listen(server_socket, n_clients); // listening/holding 5 pending connections.
-    }while(listen_val==-1);
+
+
+
+    // do{
+    //     //staying here till we get any connection, and not abruptly terminating.
+    //     listen_val = listen(server_socket, n_clients); // listening/holding 5 pending connections.
+    // }while(listen_val==-1);
+
+    listen_val=listen(server_socket,n_clients);
+    if(listen_val==-1){
+        std::cout<<"Failed on listen"<<std::endl;
+        exit(1);
+    }
+
     running=true;
 
     while (running)
