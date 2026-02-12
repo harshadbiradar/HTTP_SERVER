@@ -21,6 +21,7 @@ target_compile_options(concurrent_server PRIVATE
     -Wall
     -Wextra
     -Wpedantic
+    -g
 
     -fsanitize=address,undefined
     -fno-omit-frame-pointer

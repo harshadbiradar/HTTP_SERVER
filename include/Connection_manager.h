@@ -10,10 +10,10 @@ class Connection_manager{
         // std::unordered_map<int ,std::shared_ptr<Connection>>live_connection;
         std::atomic<bool>closing_flag=false;
     public:
-        // void accept_all(int sock_fd,int epoll_fd,struct epoll_event &event,std::unordered_map<int ,std::shared_ptr<Connection>>&live_connection);
-        void remove_all_connection(int epoll_fd,std::vector<Connection*> all_connections);
-        void close_connection(int fd,int epoll_fd,std::vector<Connection*> all_connections);
-        void handle_client_fd(struct epoll_event &event,Connection *Conn);
+        void accept_all(int sock_fd,int epoll_fd,int dispacth_epoll,struct epoll_event &event);
+        void remove_all_connection(int epoll_fd,std::vector<Connection*> &all_connections);
+        void close_connection(int fd,int epoll_fd,std::vector<Connection*> &all_connections);
+        void handle_client_fd(int epoll_fd,struct epoll_event &event,std::vector<Connection*> &all_connections);
 
         ~Connection_manager(){
             if(!closing_flag){

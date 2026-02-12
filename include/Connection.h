@@ -73,7 +73,7 @@ struct Connection {
     }
 
     ~Connection() {
-        if (fd != -1) close(fd);
+        // if (fd != -1) close(fd);
     }
 };
 

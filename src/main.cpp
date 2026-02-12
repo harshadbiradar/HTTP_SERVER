@@ -10,6 +10,7 @@ int main(int argc,char* argv[]){
     int n_workers=11;
     int queue_size=16384;
     int buff_len=8192;
+    int Max_evnt_p_thd=32;
 
     for (int i = 1; i < argc; i++) {
         std::string arg = argv[i];
@@ -17,8 +18,10 @@ int main(int argc,char* argv[]){
         if (arg == "--events")  max_events = std::stoi(argv[++i]);
         if (arg == "--queue")   queue_size = std::stoi(argv[++i]);
         if (arg == "--bufflen")   buff_len = std::stoi(argv[++i]);
+        if (arg == "--maxperthrd") Max_evnt_p_thd = std::stoi(argv[++i]);
     }
     config.set_config(port,n_clients,max_events,n_workers,queue_size*n_workers,buff_len);
-    Server server(config);
+    Thread_Pool Worker(Max_evnt_p_thd,n_clients);
+    Server server(config,Worker);
     server.start();
 }
