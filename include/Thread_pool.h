@@ -1,94 +1,49 @@
 #ifndef THPL
 #define THPL
 
+#include <iostream>
 #include "Blocking_Queue.h"
 #include <thread>
 #include <vector>
 #include <functional>
+#include <sys/epoll.h>
+#include <Connection_manager.h>
+
 
 // template <size_t N>
 class Thread_Pool
 {
 private:
-    std::mutex m;
     std::vector<std::thread> pool;
-    std::vector<Blocking_Queue<std::function<void()>>> queue_pool;
-    // Blocking_Queue<std::function<void()>> BQ;
-    bool shutdown_flag = false;
+    std::vector<Connection *>all_connections;
+    std::atomic<bool>shutdown_flag = false;
+    Connection_manager Conn_manager;
+    int Max_events=1;
     void close_pool();
-    int N=0;
+    // int N=0;
+    int dispatcher_epoll=-1;
 
 public:
-    // Thread_Pool() : BQ(100)
-    // {
-    //     std::cout << " [INFO]:: Thread_Pool initiated." << std::endl;
-    // }
+    Thread_Pool(int epl_fd,int Max_events=1,int n_clients) : dispatcher_epoll(epl_fd),Max_events(Max_events)
+                ,all_connections(n_clients+50,nullptr)
+    {
+        if(-1==epl_fd){
+            std::cerr<<"[ERROR]:: Invalid dispacther fd. Thread_pool can't be initiated."<<std::endl;
+            std::cout<<"[INFO]:: Use create_pool(Num,Epoll_fd) member instead to initiate Thread_pool"<<std::endl;
+        }   
+        std::cout << " [INFO]:: Thread_Pool initiated." << std::endl;
+    }
     // define other ctorss.....
     ~Thread_Pool()
     {
         shutdown();
     }
 
-    void submit(int index,std::function<void()>);
-    void create_pool(int N,int queue_size);
+    
+    void create_pool(int epl_fd);
+    void create_pool(int N, int epl_fd);
     void shutdown();
-    void thread_func(int index);
+    void thread_func(int epl_fd,int Max_events);
 };
-
-// template <size_t N>
-// void Thread_Pool::thread_func()
-// {
-//     while (true)
-//     {
-//         auto task = BQ.pop();
-//         if (!task) {
-//             // Empty task means shutdown
-//             // std::cout<<" [DEBUG]:: exiting out from one of the thread.."<<std::endl;
-//             break;
-//         }
-//         task();
-//     }
-// }
-
-// // template <size_t N>
-// void Thread_Pool::create_pool(int N)
-// {   
-//     BQ.set_size(N*100);
-//     std::cout << " [INFO]:: Creating " << N << " Threads" << std::endl;
-//     for (int i = 0; i < N; i++)
-//     {
-
-//         pool.emplace_back(&Thread_Pool::thread_func, this);
-//     }
-// }
-// // template <size_t N>
-// void Thread_Pool::close_pool()
-// {
-//     std::cout << " [INFO]:: Terminating " << N << " Threads" << std::endl;
-//     for (auto &t : pool)
-//     {
-//         if(t.joinable())t.join();
-//         // std::cout<<" Hello there"<<std::endl;
-//     }
-// }
-
-// // template <size_t N>
-// void Thread_Pool::submit(std::function<void()> task)
-// {
-//     BQ.push(std::move(task));
-// }
-
-// // template <size_t N>
-// void Thread_Pool::shutdown()
-// {
-//     {
-//         std::unique_lock<std::mutex> lock(m);
-//         if (shutdown_flag)
-//             return;
-//         shutdown_flag = true;
-//         BQ.shutdown();
-//     }
-//     close_pool();
-// }
 
 #endif

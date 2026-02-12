@@ -1,34 +1,42 @@
 #include"../include/Thread_pool.h"
 
-void Thread_Pool::thread_func(int index)
+void Thread_Pool::thread_func(int epoll_fd,int max_events)
 {
-    while (true)
-    {
-        auto task = queue_pool[index].pop();
-        if (!task) {
-            // Empty task means shutdown
-            // //std::cout<<" [DEBUG]:: exiting out from one of the thread.."<<std::endl;
-            break;
+    // epoll_wait here....
+    std::vector<epoll_event>events;
+    struct epoll_event event;
+    events.reserve(max_events);
+    Connection *Conn;
+    int n=0;
+    while(!shutdown||n){
+        n=epoll_wait(epoll_fd,events.data(),Max_events,-1);
+        n=(max_events>n)?n:max_events;//So wont endup handling, the extra loop(causing UB).
+        for(int i=0;i<n;i++){
+            //handle the fd...
+            //LOG_DEBUG("Going to client_handle for "<<events[i].data.fd);
+            if(all_connections[events[i].data.fd]==nullptr){
+                Conn=new Connection(events[i].data.fd,events[i]);
+                all_connections[events[i].data.fd]=Conn;
+            }
+            Conn_manager.handle_client_fd(events[i], all_connections[events[i].data.fd]);
         }
-        task();
     }
+
 }
 
 // template <size_t N>
-void Thread_Pool::create_pool(int N,int queue_size)
-{   this->N=N;
-    // BQ.set_size(queue_size);
-    // //std::cout << " [INFO]:: Creating " << N << " Threads" << std::endl;
-    
+void Thread_Pool::create_pool(int N,int epl_fd)
+{   this->dispatcher_epoll=epl_fd;
     for (int i = 0; i < N; ++i)
     {
-        Blocking_Queue<std::function<void()>> BQ;
-        BQ.set_size(queue_size/N);
-        queue_pool.emplace_back(std::move(BQ));
+        pool.emplace_back(&Thread_Pool::thread_func, this,epl_fd,Max_events);
     }
+}
+
+void Thread_Pool::create_pool(int N){
     for (int i = 0; i < N; ++i)
     {
-        pool.emplace_back(&Thread_Pool::thread_func, this,i);
+        pool.emplace_back(&Thread_Pool::thread_func, this,dispatcher_epoll);
     }
 }
 // template <size_t N>
@@ -43,23 +51,19 @@ void Thread_Pool::close_pool()
 }
 
 // template <size_t N>
-void Thread_Pool::submit(int index,std::function<void()> task)
-{
-    queue_pool[index].push(std::move(task));
-}
+
 
 // template <size_t N>
 void Thread_Pool::shutdown()
 {
     {
-        std::unique_lock<std::mutex> lock(m);
         if (shutdown_flag)
             return;
         shutdown_flag = true;
-        // BQ.shutdown();
-        for(int i=0;i<N;i++)
-            queue_pool[i].shutdown();
 
     }
     close_pool();
 }
+
+
+
