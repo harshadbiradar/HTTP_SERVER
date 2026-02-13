@@ -88,14 +88,14 @@ void Server::setup_server(){
         terminate();
     }
     LOG_INFO("epoll instance created: recv_epoll=" << recv_epoll);
-    dispacth_epoll = epoll_create1(0);
-    if (dispacth_epoll == -1)
-    {
-        // std::cerr << "[ERROR]: Error creating epoll_fd.\nTerminating program" << std::endl;
-        LOG_ERROR("Error creating dispacth_epoll.\nTerminating program");
-        terminate();
-    }
-    LOG_INFO("epoll instance created: dispacth_epoll=" << dispacth_epoll);
+    // dispacth_epoll = epoll_create1(0);
+    // if (dispacth_epoll == -1)
+    // {
+    //     // std::cerr << "[ERROR]: Error creating epoll_fd.\nTerminating program" << std::endl;
+    //     LOG_ERROR("Error creating dispacth_epoll.\nTerminating program");
+    //     terminate();
+    // }
+    // LOG_INFO("epoll instance created: dispacth_epoll=" << dispacth_epoll);
 
 
     // epoll event starts here.
@@ -109,7 +109,7 @@ void Server::setup_server(){
         terminate();
     }
 
-    Workers.create_pool(n_workers,dispacth_epoll);
+    // Workers.create_pool(n_workers,dispacth_epoll);
 
 }
 

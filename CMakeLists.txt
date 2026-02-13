@@ -9,7 +9,6 @@ add_executable(concurrent_server)
 target_sources(concurrent_server PRIVATE
     src/thread_pool.cpp
     src/connection_manager.cpp
-    src/server.cpp
     src/main.cpp
 )
 
