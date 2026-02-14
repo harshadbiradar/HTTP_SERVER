@@ -9,7 +9,6 @@ add_executable(concurrent_server)
 target_sources(concurrent_server PRIVATE
     src/thread_pool.cpp
     src/connection_manager.cpp
-    src/server.cpp
     src/main.cpp
 )
 
@@ -21,6 +20,7 @@ target_compile_options(concurrent_server PRIVATE
     -Wall
     -Wextra
     -Wpedantic
+    -g
 
     -fsanitize=address,undefined
     -fno-omit-frame-pointer

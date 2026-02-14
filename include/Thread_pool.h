@@ -1,38 +1,53 @@
 #ifndef THPL
 #define THPL
 
-#include "Blocking_Queue.h"
+#include <iostream>
 #include <thread>
 #include <vector>
 #include <functional>
+#include <sys/epoll.h>
+#include<config.h>
+#include <Connection_manager.h>
+
 
 // template <size_t N>
 class Thread_Pool
 {
 private:
-    std::mutex m;
+    int max_events;
+    int n_clients;
+    int n_workers;
+    int buff_len;
+    int Max_evnt_p_thd;
+    int port;
+    // int queue_size;
+    // int N=0;
+    // int dispatcher_epoll=-1;
     std::vector<std::thread> pool;
-    std::vector<Blocking_Queue<std::function<void()>>> queue_pool;
-    // Blocking_Queue<std::function<void()>> BQ;
-    bool shutdown_flag = false;
+    std::atomic<bool>shutdown_flag {false};
+    Connection_manager Conn_manager;
+    // std::vector<Connection *>all_connections;
     void close_pool();
-    int N=0;
 
 public:
-    // Thread_Pool() : BQ(100)
-    // {
-    //     std::cout << " [INFO]:: Thread_Pool initiated." << std::endl;
-    // }
+    Thread_Pool(Config config) 
+    {  
+        std::cout << " [INFO]:: Thread_Pool initiated." << std::endl;
+        config.get_config(port, n_clients, max_events, n_workers, buff_len,Max_evnt_p_thd);
+    }
     // define other ctorss.....
     ~Thread_Pool()
     {
         shutdown();
     }
 
-    void submit(int index,std::function<void()>);
-    void create_pool(int N,int queue_size);
+    
+    // void create_pool(int epl_fd);
+    void create_pool(int N);
     void shutdown();
-    void thread_func(int index);
+    void thread_func();
+    void setup_server(int &server_socket,int &epoll_fd,struct epoll_event &event);
+    void terminate(int &server_socket,int &epoll_fd);
 };
 
 #endif

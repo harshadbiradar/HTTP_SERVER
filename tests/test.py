@@ -404,10 +404,12 @@ class LoadTester:
                     latencies.append(latency)
                     requests_sent += 1
                 except asyncio.TimeoutError:
+                    print(f"Connection {conn_id} timed out waiting for response", file=sys.stderr)
                     errors += 1
                     if errors > 10:
                         break
                 except Exception as e:
+                    print(f"Connection {conn_id} error: {type(e).__name__} - {e}", file=sys.stderr)
                     errors += 1
                     if errors > 10:
                         break
@@ -483,23 +485,23 @@ class LoadTester:
         all_results = []
         
         for num_connections in connection_levels:
-            # print(f"\n{'='*80}")
-            # print(f"Phase: {num_connections} concurrent connections")
-            # print(f"{'='*80}")
+            print(f"\n{'='*80}")
+            print(f"Phase: {num_connections} concurrent connections")
+            print(f"{'='*80}")
             
             try:
                 result = await self.run_phase(num_connections, duration, message, terminator)
                 all_results.append(result)
                 
                 summary = result.summary()
-                # print(f"\n   Results:")
-                # print(f"      Total Requests: {result.total_requests:,}")
-                # print(f"      RPS: {summary['rps']}")
-                # print(f"      Avg Latency: {summary['latency_avg']}")
-                # print(f"      P50 Latency: {summary['latency_p50']}")
-                # print(f"      P95 Latency: {summary['latency_p95']}")
-                # print(f"      P99 Latency: {summary['latency_p99']}")
-                # print(f"      Errors: {result.errors}")
+                print(f"\n   Results:")
+                print(f"      Total Requests: {result.total_requests:,}")
+                print(f"      RPS: {summary['rps']}")
+                print(f"      Avg Latency: {summary['latency_avg']}")
+                print(f"      P50 Latency: {summary['latency_p50']}")
+                print(f"      P95 Latency: {summary['latency_p95']}")
+                print(f"      P99 Latency: {summary['latency_p99']}")
+                print(f"      Errors: {result.errors}")
                 
             except Exception as e:
                 print(f"   Phase failed: {e}")
