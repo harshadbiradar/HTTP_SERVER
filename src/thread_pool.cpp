@@ -38,7 +38,7 @@ void Thread_Pool::thread_func()
             }
             else
             {
-                // Safety: Dynamic resize if FD exceeds our pre-allocated vector
+                // Safety:  Dynamic resize if FD exceeds our pre-allocated vector
                 if (fd >= (int)all_connections.size()) {
                     all_connections.resize(fd + 1024, nullptr);
                 }
