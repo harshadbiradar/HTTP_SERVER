@@ -39,6 +39,7 @@ void Thread_Pool::close_pool()
     {
         if(t.joinable())t.join();
         // //std::cout<<" Hello there"<<std::endl;
+        
     }
 }
 
