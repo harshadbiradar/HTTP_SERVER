@@ -2,13 +2,15 @@
 *
 
 # Allow directories
-!*/
+!src/
+!include/
+!tests/
+
 
 # Allow source & project structure
 !src/**
 !include/**
-!tests/**
-!docs/**
+!tests/test*
 
 # Allow common project files
 !CMakeLists.txt
