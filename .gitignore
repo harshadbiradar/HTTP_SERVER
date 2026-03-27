@@ -2,12 +2,12 @@
 *
 
 # Allow directories
-!*/
+!tests
 
 # Allow source & project structure
 !src/**
 !include/**
-!tests/**
+!tests/test*
 !docs/**
 
 # Allow common project files

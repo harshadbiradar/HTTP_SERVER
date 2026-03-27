@@ -25,6 +25,6 @@ cmake --build .
 
 ## Project Evolution
 This project evolved through several architectural stages:
-1. **master/sub:** (This branch) Baseline Single-Reactor pattern.
+1. **sub:** (This branch) Baseline Single-Reactor pattern.
 2. **mulqu:** Multi-Queue design with dedicated worker pools and eventfd signaling.
 3. **MultiReactor:** Optimized Shared-Nothing architecture for maximum performance.
