@@ -1,0 +1,1351 @@
+Results will be saved to: stress_test_results_20260214_174844
+========================================
+
+========================================
+Test #1: Threads=5, MaxEvents=4096, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=375814.82, Latency=22.31ms
+Saved to: stress_test_results_20260214_174844/test_1_t5_e4096_c5000/
+
+========================================
+Test #2: Threads=5, MaxEvents=4096, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=384922.34, Latency=51.04ms
+Saved to: stress_test_results_20260214_174844/test_2_t5_e4096_c10000/
+
+========================================
+Test #3: Threads=5, MaxEvents=4096, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=318177.31, Latency=104.53ms
+Saved to: stress_test_results_20260214_174844/test_3_t5_e4096_c15000/
+
+========================================
+Test #4: Threads=5, MaxEvents=4096, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=351680.55, Latency=110.56ms
+Saved to: stress_test_results_20260214_174844/test_4_t5_e4096_c20000/
+
+========================================
+Test #5: Threads=5, MaxEvents=4096, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=321108.99, Latency=130.56ms
+Saved to: stress_test_results_20260214_174844/test_5_t5_e4096_c25000/
+
+========================================
+Test #6: Threads=5, MaxEvents=6144, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=375362.63, Latency=27.23ms
+Saved to: stress_test_results_20260214_174844/test_6_t5_e6144_c5000/
+
+========================================
+Test #7: Threads=5, MaxEvents=6144, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=404332.66, Latency=42.13ms
+Saved to: stress_test_results_20260214_174844/test_7_t5_e6144_c10000/
+
+========================================
+Test #8: Threads=5, MaxEvents=6144, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=384533.64, Latency=88.76ms
+Saved to: stress_test_results_20260214_174844/test_8_t5_e6144_c15000/
+
+========================================
+Test #9: Threads=5, MaxEvents=6144, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=348243.42, Latency=116.72ms
+Saved to: stress_test_results_20260214_174844/test_9_t5_e6144_c20000/
+
+========================================
+Test #10: Threads=5, MaxEvents=6144, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=304016.70, Latency=134.43ms
+Saved to: stress_test_results_20260214_174844/test_10_t5_e6144_c25000/
+
+========================================
+Test #11: Threads=5, MaxEvents=8192, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=375917.63, Latency=25.59ms
+Saved to: stress_test_results_20260214_174844/test_11_t5_e8192_c5000/
+
+========================================
+Test #12: Threads=5, MaxEvents=8192, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=399976.92, Latency=42.18ms
+Saved to: stress_test_results_20260214_174844/test_12_t5_e8192_c10000/
+
+========================================
+Test #13: Threads=5, MaxEvents=8192, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=380505.48, Latency=89.19ms
+Saved to: stress_test_results_20260214_174844/test_13_t5_e8192_c15000/
+
+========================================
+Test #14: Threads=5, MaxEvents=8192, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=264346.38, Latency=146.75ms
+Saved to: stress_test_results_20260214_174844/test_14_t5_e8192_c20000/
+
+========================================
+Test #15: Threads=5, MaxEvents=8192, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=232460.82, Latency=116.36ms
+Saved to: stress_test_results_20260214_174844/test_15_t5_e8192_c25000/
+
+========================================
+Test #16: Threads=6, MaxEvents=4096, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=475819.17, Latency=24.56ms
+Saved to: stress_test_results_20260214_174844/test_16_t6_e4096_c5000/
+
+========================================
+Test #17: Threads=6, MaxEvents=4096, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=478616.09, Latency=46.54ms
+Saved to: stress_test_results_20260214_174844/test_17_t6_e4096_c10000/
+
+========================================
+Test #18: Threads=6, MaxEvents=4096, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=464359.49, Latency=74.69ms
+Saved to: stress_test_results_20260214_174844/test_18_t6_e4096_c15000/
+
+========================================
+Test #19: Threads=6, MaxEvents=4096, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=374437.80, Latency=100.13ms
+Saved to: stress_test_results_20260214_174844/test_19_t6_e4096_c20000/
+
+========================================
+Test #20: Threads=6, MaxEvents=4096, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=323420.74, Latency=118.64ms
+Saved to: stress_test_results_20260214_174844/test_20_t6_e4096_c25000/
+
+========================================
+Test #21: Threads=6, MaxEvents=6144, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=446725.67, Latency=24.73ms
+Saved to: stress_test_results_20260214_174844/test_21_t6_e6144_c5000/
+
+========================================
+Test #22: Threads=6, MaxEvents=6144, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=475367.15, Latency=50.49ms
+Saved to: stress_test_results_20260214_174844/test_22_t6_e6144_c10000/
+
+========================================
+Test #23: Threads=6, MaxEvents=6144, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=464768.20, Latency=75.41ms
+Saved to: stress_test_results_20260214_174844/test_23_t6_e6144_c15000/
+
+========================================
+Test #24: Threads=6, MaxEvents=6144, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=397993.85, Latency=97.87ms
+Saved to: stress_test_results_20260214_174844/test_24_t6_e6144_c20000/
+
+========================================
+Test #25: Threads=6, MaxEvents=6144, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=316042.31, Latency=85.23ms
+Saved to: stress_test_results_20260214_174844/test_25_t6_e6144_c25000/
+
+========================================
+Test #26: Threads=6, MaxEvents=8192, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=453278.09, Latency=25.66ms
+Saved to: stress_test_results_20260214_174844/test_26_t6_e8192_c5000/
+
+========================================
+Test #27: Threads=6, MaxEvents=8192, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=450260.64, Latency=54.09ms
+Saved to: stress_test_results_20260214_174844/test_27_t6_e8192_c10000/
+
+========================================
+Test #28: Threads=6, MaxEvents=8192, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=457162.30, Latency=75.90ms
+Saved to: stress_test_results_20260214_174844/test_28_t6_e8192_c15000/
+
+========================================
+Test #29: Threads=6, MaxEvents=8192, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=370702.13, Latency=95.45ms
+Saved to: stress_test_results_20260214_174844/test_29_t6_e8192_c20000/
+
+========================================
+Test #30: Threads=6, MaxEvents=8192, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=338701.08, Latency=110.63ms
+Saved to: stress_test_results_20260214_174844/test_30_t6_e8192_c25000/
+
+========================================
+Test #31: Threads=7, MaxEvents=4096, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=515728.08, Latency=23.50ms
+Saved to: stress_test_results_20260214_174844/test_31_t7_e4096_c5000/
+
+========================================
+Test #32: Threads=7, MaxEvents=4096, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=494194.59, Latency=48.98ms
+Saved to: stress_test_results_20260214_174844/test_32_t7_e4096_c10000/
+
+========================================
+Test #33: Threads=7, MaxEvents=4096, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=495156.94, Latency=72.51ms
+Saved to: stress_test_results_20260214_174844/test_33_t7_e4096_c15000/
+
+========================================
+Test #34: Threads=7, MaxEvents=4096, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=425241.78, Latency=88.53ms
+Saved to: stress_test_results_20260214_174844/test_34_t7_e4096_c20000/
+
+========================================
+Test #35: Threads=7, MaxEvents=4096, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=344492.91, Latency=119.34ms
+Saved to: stress_test_results_20260214_174844/test_35_t7_e4096_c25000/
+
+========================================
+Test #36: Threads=7, MaxEvents=6144, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=545147.55, Latency=22.38ms
+Saved to: stress_test_results_20260214_174844/test_36_t7_e6144_c5000/
+
+========================================
+Test #37: Threads=7, MaxEvents=6144, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=491855.66, Latency=50.70ms
+Saved to: stress_test_results_20260214_174844/test_37_t7_e6144_c10000/
+
+========================================
+Test #38: Threads=7, MaxEvents=6144, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=460448.35, Latency=73.89ms
+Saved to: stress_test_results_20260214_174844/test_38_t7_e6144_c15000/
+
+========================================
+Test #39: Threads=7, MaxEvents=6144, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=418531.91, Latency=88.56ms
+Saved to: stress_test_results_20260214_174844/test_39_t7_e6144_c20000/
+
+========================================
+Test #40: Threads=7, MaxEvents=6144, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=325210.36, Latency=121.42ms
+Saved to: stress_test_results_20260214_174844/test_40_t7_e6144_c25000/
+
+========================================
+Test #41: Threads=7, MaxEvents=8192, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=535613.21, Latency=23.30ms
+Saved to: stress_test_results_20260214_174844/test_41_t7_e8192_c5000/
+
+========================================
+Test #42: Threads=7, MaxEvents=8192, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=494213.23, Latency=49.18ms
+Saved to: stress_test_results_20260214_174844/test_42_t7_e8192_c10000/
+
+========================================
+Test #43: Threads=7, MaxEvents=8192, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=469228.92, Latency=71.63ms
+Saved to: stress_test_results_20260214_174844/test_43_t7_e8192_c15000/
+
+========================================
+Test #44: Threads=7, MaxEvents=8192, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=389560.76, Latency=97.95ms
+Saved to: stress_test_results_20260214_174844/test_44_t7_e8192_c20000/
+
+========================================
+Test #45: Threads=7, MaxEvents=8192, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=339730.46, Latency=114.57ms
+Saved to: stress_test_results_20260214_174844/test_45_t7_e8192_c25000/
+
+========================================
+Test #46: Threads=8, MaxEvents=4096, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=525054.12, Latency=24.20ms
+Saved to: stress_test_results_20260214_174844/test_46_t8_e4096_c5000/
+
+========================================
+Test #47: Threads=8, MaxEvents=4096, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=527209.40, Latency=48.22ms
+Saved to: stress_test_results_20260214_174844/test_47_t8_e4096_c10000/
+
+========================================
+Test #48: Threads=8, MaxEvents=4096, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=468256.39, Latency=73.09ms
+Saved to: stress_test_results_20260214_174844/test_48_t8_e4096_c15000/
+
+========================================
+Test #49: Threads=8, MaxEvents=4096, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=387957.77, Latency=83.18ms
+Saved to: stress_test_results_20260214_174844/test_49_t8_e4096_c20000/
+
+========================================
+Test #50: Threads=8, MaxEvents=4096, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=301307.64, Latency=95.35ms
+Saved to: stress_test_results_20260214_174844/test_50_t8_e4096_c25000/
+
+========================================
+Test #51: Threads=8, MaxEvents=6144, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=554363.75, Latency=23.63ms
+Saved to: stress_test_results_20260214_174844/test_51_t8_e6144_c5000/
+
+========================================
+Test #52: Threads=8, MaxEvents=6144, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=530672.67, Latency=47.90ms
+Saved to: stress_test_results_20260214_174844/test_52_t8_e6144_c10000/
+
+========================================
+Test #53: Threads=8, MaxEvents=6144, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=491659.69, Latency=73.41ms
+Saved to: stress_test_results_20260214_174844/test_53_t8_e6144_c15000/
+
+========================================
+Test #54: Threads=8, MaxEvents=6144, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=401599.25, Latency=82.81ms
+Saved to: stress_test_results_20260214_174844/test_54_t8_e6144_c20000/
+
+========================================
+Test #55: Threads=8, MaxEvents=6144, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=328174.85, Latency=129.65ms
+Saved to: stress_test_results_20260214_174844/test_55_t8_e6144_c25000/
+
+========================================
+Test #56: Threads=8, MaxEvents=8192, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=536057.03, Latency=22.53ms
+Saved to: stress_test_results_20260214_174844/test_56_t8_e8192_c5000/
+
+========================================
+Test #57: Threads=8, MaxEvents=8192, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=532819.87, Latency=47.34ms
+Saved to: stress_test_results_20260214_174844/test_57_t8_e8192_c10000/
+
+========================================
+Test #58: Threads=8, MaxEvents=8192, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=492164.99, Latency=71.85ms
+Saved to: stress_test_results_20260214_174844/test_58_t8_e8192_c15000/
+
+========================================
+Test #59: Threads=8, MaxEvents=8192, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=427199.81, Latency=98.68ms
+Saved to: stress_test_results_20260214_174844/test_59_t8_e8192_c20000/
+
+========================================
+Test #60: Threads=8, MaxEvents=8192, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=327054.72, Latency=123.09ms
+Saved to: stress_test_results_20260214_174844/test_60_t8_e8192_c25000/
+
+========================================
+Test #61: Threads=9, MaxEvents=4096, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=542569.84, Latency=21.98ms
+Saved to: stress_test_results_20260214_174844/test_61_t9_e4096_c5000/
+
+========================================
+Test #62: Threads=9, MaxEvents=4096, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=536099.27, Latency=47.67ms
+Saved to: stress_test_results_20260214_174844/test_62_t9_e4096_c10000/
+
+========================================
+Test #63: Threads=9, MaxEvents=4096, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=499378.22, Latency=73.48ms
+Saved to: stress_test_results_20260214_174844/test_63_t9_e4096_c15000/
+
+========================================
+Test #64: Threads=9, MaxEvents=4096, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=419810.75, Latency=76.36ms
+Saved to: stress_test_results_20260214_174844/test_64_t9_e4096_c20000/
+
+========================================
+Test #65: Threads=9, MaxEvents=4096, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=335505.09, Latency=111.81ms
+Saved to: stress_test_results_20260214_174844/test_65_t9_e4096_c25000/
+
+========================================
+Test #66: Threads=9, MaxEvents=6144, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=538454.09, Latency=22.12ms
+Saved to: stress_test_results_20260214_174844/test_66_t9_e6144_c5000/
+
+========================================
+Test #67: Threads=9, MaxEvents=6144, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=505106.19, Latency=48.10ms
+Saved to: stress_test_results_20260214_174844/test_67_t9_e6144_c10000/
+
+========================================
+Test #68: Threads=9, MaxEvents=6144, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=497700.02, Latency=76.54ms
+Saved to: stress_test_results_20260214_174844/test_68_t9_e6144_c15000/
+
+========================================
+Test #69: Threads=9, MaxEvents=6144, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=415558.13, Latency=76.48ms
+Saved to: stress_test_results_20260214_174844/test_69_t9_e6144_c20000/
+
+========================================
+Test #70: Threads=9, MaxEvents=6144, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=316121.93, Latency=109.62ms
+Saved to: stress_test_results_20260214_174844/test_70_t9_e6144_c25000/
+
+========================================
+Test #71: Threads=9, MaxEvents=8192, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=573998.97, Latency=21.69ms
+Saved to: stress_test_results_20260214_174844/test_71_t9_e8192_c5000/
+
+========================================
+Test #72: Threads=9, MaxEvents=8192, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=500828.30, Latency=49.22ms
+Saved to: stress_test_results_20260214_174844/test_72_t9_e8192_c10000/
+
+========================================
+Test #73: Threads=9, MaxEvents=8192, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=480807.76, Latency=77.48ms
+Saved to: stress_test_results_20260214_174844/test_73_t9_e8192_c15000/
+
+========================================
+Test #74: Threads=9, MaxEvents=8192, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=421914.45, Latency=96.23ms
+Saved to: stress_test_results_20260214_174844/test_74_t9_e8192_c20000/
+
+========================================
+Test #75: Threads=9, MaxEvents=8192, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=332839.49, Latency=109.21ms
+Saved to: stress_test_results_20260214_174844/test_75_t9_e8192_c25000/
+
+========================================
+Test #76: Threads=10, MaxEvents=4096, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=585248.49, Latency=21.12ms
+Saved to: stress_test_results_20260214_174844/test_76_t10_e4096_c5000/
+
+========================================
+Test #77: Threads=10, MaxEvents=4096, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=504343.28, Latency=51.55ms
+Saved to: stress_test_results_20260214_174844/test_77_t10_e4096_c10000/
+
+========================================
+Test #78: Threads=10, MaxEvents=4096, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=472760.82, Latency=74.32ms
+Saved to: stress_test_results_20260214_174844/test_78_t10_e4096_c15000/
+
+========================================
+Test #79: Threads=10, MaxEvents=4096, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=402483.60, Latency=81.70ms
+Saved to: stress_test_results_20260214_174844/test_79_t10_e4096_c20000/
+
+========================================
+Test #80: Threads=10, MaxEvents=4096, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=329801.00, Latency=74.24ms
+Saved to: stress_test_results_20260214_174844/test_80_t10_e4096_c25000/
+
+========================================
+Test #81: Threads=10, MaxEvents=6144, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=583132.00, Latency=21.58ms
+Saved to: stress_test_results_20260214_174844/test_81_t10_e6144_c5000/
+
+========================================
+Test #82: Threads=10, MaxEvents=6144, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=533105.88, Latency=50.91ms
+Saved to: stress_test_results_20260214_174844/test_82_t10_e6144_c10000/
+
+========================================
+Test #83: Threads=10, MaxEvents=6144, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=478525.10, Latency=73.11ms
+Saved to: stress_test_results_20260214_174844/test_83_t10_e6144_c15000/
+
+========================================
+Test #84: Threads=10, MaxEvents=6144, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=362577.24, Latency=68.49ms
+Saved to: stress_test_results_20260214_174844/test_84_t10_e6144_c20000/
+
+========================================
+Test #85: Threads=10, MaxEvents=6144, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=282604.61, Latency=79.13ms
+Saved to: stress_test_results_20260214_174844/test_85_t10_e6144_c25000/
+
+========================================
+Test #86: Threads=10, MaxEvents=8192, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=549546.30, Latency=21.80ms
+Saved to: stress_test_results_20260214_174844/test_86_t10_e8192_c5000/
+
+========================================
+Test #87: Threads=10, MaxEvents=8192, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=535646.12, Latency=48.82ms
+Saved to: stress_test_results_20260214_174844/test_87_t10_e8192_c10000/
+
+========================================
+Test #88: Threads=10, MaxEvents=8192, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=503911.71, Latency=75.41ms
+Saved to: stress_test_results_20260214_174844/test_88_t10_e8192_c15000/
+
+========================================
+Test #89: Threads=10, MaxEvents=8192, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=428142.42, Latency=82.54ms
+Saved to: stress_test_results_20260214_174844/test_89_t10_e8192_c20000/
+
+========================================
+Test #90: Threads=10, MaxEvents=8192, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=318594.36, Latency=103.78ms
+Saved to: stress_test_results_20260214_174844/test_90_t10_e8192_c25000/
+
+========================================
+Test #91: Threads=11, MaxEvents=4096, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=556781.36, Latency=21.57ms
+Saved to: stress_test_results_20260214_174844/test_91_t11_e4096_c5000/
+
+========================================
+Test #92: Threads=11, MaxEvents=4096, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=512350.35, Latency=48.71ms
+Saved to: stress_test_results_20260214_174844/test_92_t11_e4096_c10000/
+
+========================================
+Test #93: Threads=11, MaxEvents=4096, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=522231.05, Latency=68.91ms
+Saved to: stress_test_results_20260214_174844/test_93_t11_e4096_c15000/
+
+========================================
+Test #94: Threads=11, MaxEvents=4096, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=419634.65, Latency=89.34ms
+Saved to: stress_test_results_20260214_174844/test_94_t11_e4096_c20000/
+
+========================================
+Test #95: Threads=11, MaxEvents=4096, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=310481.20, Latency=82.90ms
+Saved to: stress_test_results_20260214_174844/test_95_t11_e4096_c25000/
+
+========================================
+Test #96: Threads=11, MaxEvents=6144, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=596135.01, Latency=21.12ms
+Saved to: stress_test_results_20260214_174844/test_96_t11_e6144_c5000/
+
+========================================
+Test #97: Threads=11, MaxEvents=6144, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=501647.68, Latency=49.29ms
+Saved to: stress_test_results_20260214_174844/test_97_t11_e6144_c10000/
+
+========================================
+Test #98: Threads=11, MaxEvents=6144, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=488821.29, Latency=71.55ms
+Saved to: stress_test_results_20260214_174844/test_98_t11_e6144_c15000/
+
+========================================
+Test #99: Threads=11, MaxEvents=6144, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=419159.63, Latency=95.85ms
+Saved to: stress_test_results_20260214_174844/test_99_t11_e6144_c20000/
+
+========================================
+Test #100: Threads=11, MaxEvents=6144, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=310772.15, Latency=109.63ms
+Saved to: stress_test_results_20260214_174844/test_100_t11_e6144_c25000/
+
+========================================
+Test #101: Threads=11, MaxEvents=8192, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=601267.27, Latency=20.99ms
+Saved to: stress_test_results_20260214_174844/test_101_t11_e8192_c5000/
+
+========================================
+Test #102: Threads=11, MaxEvents=8192, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=537346.76, Latency=49.54ms
+Saved to: stress_test_results_20260214_174844/test_102_t11_e8192_c10000/
+
+========================================
+Test #103: Threads=11, MaxEvents=8192, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=477155.50, Latency=72.27ms
+Saved to: stress_test_results_20260214_174844/test_103_t11_e8192_c15000/
+
+========================================
+Test #104: Threads=11, MaxEvents=8192, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=398259.77, Latency=63.65ms
+Saved to: stress_test_results_20260214_174844/test_104_t11_e8192_c20000/
+
+========================================
+Test #105: Threads=11, MaxEvents=8192, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=319666.65, Latency=103.07ms
+Saved to: stress_test_results_20260214_174844/test_105_t11_e8192_c25000/
+
+========================================
+Test #106: Threads=12, MaxEvents=4096, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=596578.22, Latency=20.40ms
+Saved to: stress_test_results_20260214_174844/test_106_t12_e4096_c5000/
+
+========================================
+Test #107: Threads=12, MaxEvents=4096, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=531920.74, Latency=47.13ms
+Saved to: stress_test_results_20260214_174844/test_107_t12_e4096_c10000/
+
+========================================
+Test #108: Threads=12, MaxEvents=4096, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=516065.72, Latency=68.24ms
+Saved to: stress_test_results_20260214_174844/test_108_t12_e4096_c15000/
+
+========================================
+Test #109: Threads=12, MaxEvents=4096, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=405106.38, Latency=79.61ms
+Saved to: stress_test_results_20260214_174844/test_109_t12_e4096_c20000/
+
+========================================
+Test #110: Threads=12, MaxEvents=4096, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=307084.27, Latency=87.65ms
+Saved to: stress_test_results_20260214_174844/test_110_t12_e4096_c25000/
+
+========================================
+Test #111: Threads=12, MaxEvents=6144, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=557126.57, Latency=21.29ms
+Saved to: stress_test_results_20260214_174844/test_111_t12_e6144_c5000/
+
+========================================
+Test #112: Threads=12, MaxEvents=6144, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=541611.70, Latency=47.06ms
+Saved to: stress_test_results_20260214_174844/test_112_t12_e6144_c10000/
+
+========================================
+Test #113: Threads=12, MaxEvents=6144, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=514384.37, Latency=67.06ms
+Saved to: stress_test_results_20260214_174844/test_113_t12_e6144_c15000/
+
+========================================
+Test #114: Threads=12, MaxEvents=6144, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=436676.73, Latency=69.52ms
+Saved to: stress_test_results_20260214_174844/test_114_t12_e6144_c20000/
+
+========================================
+Test #115: Threads=12, MaxEvents=6144, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=314338.18, Latency=80.89ms
+Saved to: stress_test_results_20260214_174844/test_115_t12_e6144_c25000/
+
+========================================
+Test #116: Threads=12, MaxEvents=8192, Connections=5000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c5000 -d20s --latency http://localhost:8080/
+Results: RPS=570023.12, Latency=20.33ms
+Saved to: stress_test_results_20260214_174844/test_116_t12_e8192_c5000/
+
+========================================
+Test #117: Threads=12, MaxEvents=8192, Connections=10000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c10000 -d20s --latency http://localhost:8080/
+Results: RPS=545907.86, Latency=46.25ms
+Saved to: stress_test_results_20260214_174844/test_117_t12_e8192_c10000/
+
+========================================
+Test #118: Threads=12, MaxEvents=8192, Connections=15000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c15000 -d20s --latency http://localhost:8080/
+Results: RPS=508128.64, Latency=68.42ms
+Saved to: stress_test_results_20260214_174844/test_118_t12_e8192_c15000/
+
+========================================
+Test #119: Threads=12, MaxEvents=8192, Connections=20000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c20000 -d20s --latency http://localhost:8080/
+Results: RPS=429000.88, Latency=83.83ms
+Saved to: stress_test_results_20260214_174844/test_119_t12_e8192_c20000/
+
+========================================
+Test #120: Threads=12, MaxEvents=8192, Connections=25000
+========================================
+Starting server...
+Waiting for server to start on port 8080...
+Server is ready!
+Starting CPU monitoring...
+Running: wrk -t11 -c25000 -d20s --latency http://localhost:8080/
+Results: RPS=312969.11, Latency=78.74ms
+Saved to: stress_test_results_20260214_174844/test_120_t12_e8192_c25000/
+
+========================================
+All tests complete! Generating summary...
+========================================
+
+Stress Test Summary
+===================
+Date: Sat Feb 14 18:40:34 UTC 2026
+Total Tests: 120
+
+Configuration Ranges:
+- Threads: 5-12
+- MaxEvents: 4096-8192
+- Connections: 5000-25000
+
+Top 10 Configurations by RPS:
+-----------------------------
+601267.27 test_101_t11_e8192_c5000
+596578.22 test_106_t12_e4096_c5000
+596135.01 test_96_t11_e6144_c5000
+585248.49 test_76_t10_e4096_c5000
+583132.00 test_81_t10_e6144_c5000
+573998.97 test_71_t9_e8192_c5000
+570023.12 test_116_t12_e8192_c5000
+557126.57 test_111_t12_e6144_c5000
+556781.36 test_91_t11_e4096_c5000
+554363.75 test_51_t8_e6144_c5000
+
+Detailed results saved in: stress_test_results_20260214_174844/
