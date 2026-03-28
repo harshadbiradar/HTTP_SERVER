@@ -1,60 +1,60 @@
-# C++ Multi-Reactor HTTP Server
+# HTTP Server — Multi Reactor
 
-High-performance HTTP/1.1 server implementing a **Shared-Nothing Multi-Reactor** architecture, designed to scale linearly with CPU cores and handle massive concurrency with minimal latency.
+> **Branch:** `MultiReactor`
+> **Evolved from:** [`mulqu`] — read that README (and [`sub`]) for full arch context.
 
-## Architecture
+---
 
-Each worker thread is a fully independent reactor — no shared state, no mutexes, no inter-thread signaling.
+## What Changed
 
-| Component | Design |
-|---|---|
-| Load balancing | `SO_REUSEPORT` — kernel distributes connections across threads |
-| Event model | Edge-triggered `epoll` (`EPOLLET`) per thread |
-| Connection storage | Flat pre-allocated vector per worker (cache-friendly) |
-| Synchronization | None — fully shared-nothing |
+`mulqu` still had a central bottleneck — the main thread was the sole owner of accept, epoll, and dispatch. Workers were fast, but everything funneled through one reactor. RR dispatch, per-worker BQs, per-worker eventfd — all of that coordination exists only because of that centralization.
 
-## Performance
+`MultiReactor` eliminates the problem at the root.
 
-Benchmarked via `wrk` (loopback, 120-test parameter sweep — t=5–12, maxEvents=4096–8192, c=5k–25k):
-
-| Metric | Result |
-|---|---|
-| Peak throughput | ~601,000 RPS (t=11, e=8192, c=5000) |
-| Best avg latency | ~20ms (t=12, e=8192, c=5000) |
-| Concurrency tested | 5,000 – 25,000 connections |
-
-**Key findings:**
-- Linear RPS scaling up to t=11 (physical core count); t=12 dips slightly due to context switching
-- `maxEvents` (4096 vs 8192) has <2% RPS impact — epoll batch size is not the bottleneck
-- - RPS scales well up to c=15k (~516k RPS); drops at higher connection counts due to kernel TCP stack overhead — verified via mpstat (%sys spikes to 97%+ at c=25k vs ~42% at c=15k)
-## Prerequisites
-
-- Linux (kernel with `SO_REUSEPORT` support)
-- CMake 3.10+
-- G++ with C++17 support
-
-## Build
-```bash
-mkdir -p build && cd build
-cmake ..
-cmake --build .
-```
-
-## Run
-```bash
-./concurrent_server --threads 11 --maxperthrd 8192
-```
-
-## Benchmark
-```bash
-wrk -t11 -c5000 -d20s --latency http://localhost:8080/
-```
-
-## Project Evolution
-
-| Branch | Architecture | Key characteristic |
+| Component | `mulqu` | `MultiReactor` |
 |---|---|---|
-| `sub` | Single-Reactor | Baseline |
-| `mulqu` | Multi-Queue | Per-worker queues + eventfd signaling |
-| `multireactor` | Shared-Nothing | SO_REUSEPORT, zero coordination |
-| `master` | Shared-Nothing | Current main — merged from `multireactor` |
+| Reactors | 1 main thread | N threads, each a full reactor |
+| Accept | Main thread only | Each thread accepts on its own socket |
+| epoll | Single shared `epoll_fd` | One `epoll_fd` per thread |
+| Connection ownership | Main assigns to worker | Each thread owns its connections |
+| Task queue (BQ) | Per-worker BQ | Gone |
+| write_ready_queue | Per-worker | Gone |
+| eventfd | Per-worker | Gone |
+| Dispatch | Round-Robin from main | Kernel (SO_REUSEPORT) |
+
+---
+
+## SO_REUSEPORT
+
+Each thread creates its own server socket bound to the same port using `SO_REUSEPORT`. The kernel distributes incoming connections across sockets — no userspace dispatch, no RR counter, no coordination between threads whatsoever.
+
+```
+Thread 1: socket() → bind(:8080, SO_REUSEPORT) → listen() → own epoll → own connections
+Thread 2: socket() → bind(:8080, SO_REUSEPORT) → listen() → own epoll → own connections
+...
+Thread N: socket() → bind(:8080, SO_REUSEPORT) → listen() → own epoll → own connections
+
+Kernel → distributes incoming connections across threads
+```
+
+Each thread runs the full reactor loop independently — accept, recv, generate response, send. No shared state, no locks between threads.
+
+---
+
+## Why This Is The Right End State
+
+The coordination overhead in `sub` and `mulqu` — BQ, write_ready_queue, eventfd, RR dispatch — existed entirely to manage the boundary between the single reactor and the worker pool. `MultiReactor` removes that boundary. There is no boundary. Each thread *is* the reactor.
+
+The bottleneck is now hardware: core count and NIC throughput.
+
+---
+
+## Result
+
+~600k RPS on loopback, across a 120-test parameter sweep (threads, epoll maxEvents, connection counts).
+
+---
+
+## Code Impact
+
+Significant restructuring compared to `mulqu` — the reactor loop, connection handling, and response generation all collapse into a single per-thread flow. `Blocking_Queue`, `write_ready_queue`, and eventfd wiring are removed entirely.
