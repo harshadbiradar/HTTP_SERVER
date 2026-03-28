@@ -10,6 +10,12 @@
 !tests/**
 !docs/**
 
+
+# Ignore these
+tests/t2*
+tests/st*
+tests/tcp*
+
 # Allow common project files
 !CMakeLists.txt
 !README.md
